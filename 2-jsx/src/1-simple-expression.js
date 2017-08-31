@@ -8,5 +8,5 @@ const HelloWorld = () => {
 
 ReactDOM.render(
   <HelloWorld />,
-  document.getElementById('root-2-1')
+  document.getElementById('root-1')
 );
