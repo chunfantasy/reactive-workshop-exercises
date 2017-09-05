@@ -1,0 +1,17 @@
+.grid {
+  position: relative;
+}
+
+.cell {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-width: 1px;
+  border-style: solid;
+  border-color: gray;
+}
+
+.alive {
+  background-color: blue;
+}
