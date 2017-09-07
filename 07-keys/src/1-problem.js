@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 class Players extends Component {
   constructor() {
     super();
@@ -25,5 +24,4 @@ class Players extends Component {
     </div>;
   }
 }
-
 export default Players;
