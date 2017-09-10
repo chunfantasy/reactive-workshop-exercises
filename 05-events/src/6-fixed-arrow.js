@@ -5,11 +5,11 @@ class Counter extends Component {
     super();
     this.state = {value: 0};
   }
-  count() {
+  increment() {
     this.setState(({value}) => ({value: value + 1}));
   }
   render() {
-    return <button onClick={this.count.bind(this)}>
+    return <button onClick={() => this.increment()}>
       {this.state.value}
     </button>;
   }

@@ -12,7 +12,7 @@ class Clock extends Component {
 
   render() {
     return <div>
-      {this.state.time.toLocaleTimeString() || 'Loading...'}
+      {this.state.time.toLocaleTimeString()}
     </div>;
   }
 }

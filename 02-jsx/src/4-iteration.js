@@ -12,5 +12,5 @@ const Greetings = () => {
 
 ReactDOM.render(
   <Greetings />,
-  document.getElementById('root-3')
+  document.getElementById('root-4')
 );

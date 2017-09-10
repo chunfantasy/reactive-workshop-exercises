@@ -19,5 +19,5 @@ const MessageOfTheDay = () => {
 
 ReactDOM.render(
   <MessageOfTheDay />,
-  document.getElementById('root-4')
+  document.getElementById('root-ex-1')
 );

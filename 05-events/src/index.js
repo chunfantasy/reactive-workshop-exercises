@@ -2,15 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import Counter from './1-basic.js';
-import BrokenCounter from './2-broken.js';
-import CounterWithBind1 from './3-fixed.js';
-import CounterWithBind2 from './4-another-solution.js';
-import CounterExperimental from './5-another-solution.js';
+import Alerter from './1-onClick.js';
+import Alerter2 from './1-onClick2.js';
+import BrokenCounter from './2-problem.js';
+import CounterWithBind1 from './3-fixed-with-bind-1.js';
+import CounterWithBind2 from './4-fixed-with-bind-2.js';
+import CounterExperimental from './5-fixed-es2017.js';
+import CounterWithArrow from './6-fixed-arrow.js';
 
 ReactDOM.render(
-  <Counter />,
+  <Alerter />,
   document.getElementById('root-1')
+);
+
+ReactDOM.render(
+  <Alerter2 />,
+  document.getElementById('root-12')
 );
 
 ReactDOM.render(
@@ -31,4 +38,9 @@ ReactDOM.render(
 ReactDOM.render(
   <CounterExperimental />,
   document.getElementById('root-5')
+);
+
+ReactDOM.render(
+  <CounterWithArrow />,
+  document.getElementById('root-6')
 );

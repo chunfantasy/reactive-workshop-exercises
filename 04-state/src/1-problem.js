@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Clock = () => <div>
-  {new Date().toLocaleTimeString()}
-</div>;
+const MyIp = ({address}) => <div>{address}</div>;
 
-const render = address => ReactDOM.render(
-  <Clock />,
-  document.getElementById('root-1')
-);
-render();
-setInterval(render, 1000);
+fetch('https://api.ipify.org/')
+  .then(response => response.text())
+  .then(address => {
+    ReactDOM.render(
+      <MyIp address={address} />,
+      document.getElementById('root-1')
+    );
+  });
