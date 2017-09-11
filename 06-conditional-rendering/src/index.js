@@ -5,7 +5,6 @@ import './index.css';
 import Game from './1-if-else.js';
 import GameTernary from './2-ternary.js';
 import GameTernaryInlined from './3-ternary-inlined.js';
-import GameTest from './4-test.js';
 
 ReactDOM.render(
   <Game />,
@@ -20,9 +19,4 @@ ReactDOM.render(
 ReactDOM.render(
   <GameTernaryInlined />,
   document.getElementById('root-3')
-);
-
-ReactDOM.render(
-  <GameTest />,
-  document.getElementById('root-4')
 );

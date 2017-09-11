@@ -10,6 +10,8 @@ import CounterWithBind2 from './4-fixed-with-bind-2.js';
 import CounterExperimental from './5-fixed-es2017.js';
 import CounterWithArrow from './6-fixed-arrow.js';
 
+import './dont-peek/ex-2';
+
 ReactDOM.render(
   <Alerter />,
   document.getElementById('root-1')
