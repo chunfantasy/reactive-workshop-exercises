@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 const MyIp = ({address}) => <div>{address}</div>;
 
-fetch('https://api.ipify.org/')
+fetch('/api/ipify')
   .then(response => response.text())
   .then(address => {
     ReactDOM.render(

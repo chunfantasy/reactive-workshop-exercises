@@ -13,7 +13,7 @@ const receiveIpAddress = ipAddress => ({
 });
 const fetchIpAddress = () => dispatch => {
   dispatch(requestIpAddress());
-  fetch('https://api.ipify.org/')
+  fetch('/api/ipify')
     .then(response => response.text())
     .then(ipAddress => dispatch(receiveIpAddress(ipAddress)))
 };

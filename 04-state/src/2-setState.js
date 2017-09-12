@@ -5,7 +5,7 @@ class MyIp extends Component {
   constructor() {
     super();
     this.state = {};
-    fetch('https://api.ipify.org/')
+    fetch('/api/ipify')
       .then(response => response.text())
       .then(address => this.setState({address}));
   }
