@@ -6,6 +6,7 @@ import LoginForm from './1-input.js';
 import FeedbackForm from './2-textarea.js';
 import ThemeSelectionForm from './3-select.js';
 import LoginForm2 from './4-computed-property-name-trick.js';
+import './dont-peek/ex-1';
 
 ReactDOM.render(
   <LoginForm />,

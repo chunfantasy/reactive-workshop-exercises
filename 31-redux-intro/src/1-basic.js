@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 
-const Counter = ({value, onIncrement, onDecrement}) => <p>
+const Counter = ({value, onIncrement}) => <p>
   {value}
   <button onClick={onIncrement}>+</button>
 </p>;
@@ -14,8 +14,7 @@ const store = createStore((state = 0, action) => {
 const render = () => ReactDOM.render(
   <Counter
     value={store.getState()}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+    onIncrement={() => store.dispatch({type: 'INCREMENT'})}
   />,
   document.getElementById('root')
 );
