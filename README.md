@@ -19,14 +19,8 @@ To start the app:
 npm start
 ````
 
-Some projects have test, run them using
+Some projects have test, run them using:
 
 ````bash
 npm test
 ````
-
-## React ##
-
-## Redux ##
-
-## RxJS ##
