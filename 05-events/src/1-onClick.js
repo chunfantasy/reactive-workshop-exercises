@@ -6,7 +6,7 @@ class Alerter extends Component {
   }
 
   render() {
-    return <button onClick={this.message}>
+    return <button onClick={this.showMessage}>
       Click me
     </button>;
   }
