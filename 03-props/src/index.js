@@ -8,7 +8,8 @@ import './2-class-components.js';
 import Greetings from './3-composing-components.js';
 import './4-propTypes';
 import './5-defaultProps';
-import './dont-peek/ex-2';
+
+import './ex-2';
 
 ReactDOM.render(
   <Greetings />,

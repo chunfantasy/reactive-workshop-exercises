@@ -10,7 +10,7 @@ import ClockBatching from './5-batching.js';
 import ClockBatchingSolution from './6-batching-solution.js';
 import IllustrateMergingStateUpdates from './7-merging-updates.js';
 
-import './dont-peek/ex-1';
+import './ex-1';
 
 ReactDOM.render(
   <Clock />,

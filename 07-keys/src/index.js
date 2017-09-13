@@ -9,7 +9,7 @@ import './3-incorrect-key-usage.js';
 import './4-correct-key-usage.js';
 import MoreElaboratePlayers from './5-problem.js';
 
-import './dont-peek/ex-2';
+import './ex-2';
 
 ReactDOM.render(
   <Players />,
