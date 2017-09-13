@@ -16,7 +16,6 @@ class Game extends Component {
   }
   toggleCellState(row, column) {
     this.setState(({isAlive}) => {
-      console.log(row, column);
       const key = this.cellKey(row, column);
       const result = {...isAlive};
       if (isAlive[key]) {
