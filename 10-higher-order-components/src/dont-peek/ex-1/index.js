@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-class AutoRefresh extends Component {
+const autoRefresh = ({period}) => MyComponent => class AutoRefresh extends Component {
   componentDidMount() {
-    const {period} = this.props;
     this.interval = setInterval(() => this.forceUpdate(), period);
   }
 
@@ -12,15 +11,13 @@ class AutoRefresh extends Component {
   }
 
   render() {
-    const {Component, period, ...props} = this.props;
-    return <Component {...props} />;
+    return <MyComponent {...this.props} />;
   }
-}
+};
+
+const Clock = autoRefresh({period: 1000})(() => <div>{new Date().toLocaleTimeString()}</div>);
 
 ReactDOM.render(
-  <AutoRefresh
-    period={1000}
-    Component={() => <div>{new Date().toLocaleTimeString()}</div>}
-  />,
+  <Clock />,
   document.getElementById('root-ex-1')
 );
