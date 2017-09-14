@@ -15,9 +15,11 @@ const autoRefresh = ({period}) => MyComponent => class AutoRefresh extends Compo
   }
 };
 
-const Clock = autoRefresh({period: 1000})(() => <div>{new Date().toLocaleTimeString()}</div>);
+const Clock = autoRefresh({period: 1000})(
+  ({label}) => <div>{label}{new Date().toLocaleTimeString()}</div>
+);
 
 ReactDOM.render(
-  <Clock />,
+  <Clock label="Current time: " />,
   document.getElementById('root-ex-1')
 );
