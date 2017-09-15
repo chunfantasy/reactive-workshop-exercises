@@ -11,7 +11,7 @@ const App = () => <Router>
       <li><Link to="/about">About</Link></li>
       <li><Link to="/user/123">User 123</Link></li>
       <li><Link to="/user/456">User 456</Link></li>
-      </ul>
+    </ul>
     <Route exact path="/" component={Homepage} />
     <Route path="/about" component={About} />
     <Route path="/user/:id" component={User} />
