@@ -1,25 +1,24 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-const autoRefresh = ({period}) => MyComponent => class AutoRefresh extends Component {
+const autoRefresh = (period = 1000) => MyComponent => class AutoRefresh extends Component {
   componentDidMount() {
     this.interval = setInterval(() => this.forceUpdate(), period);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  componentWillUnmount = () => clearInterval(this.interval);
 
-  render() {
-    return <MyComponent {...this.props} />;
-  }
+  render = () => <MyComponent {...this.props} />
 };
 
-const Clock = autoRefresh({period: 1000})(
-  ({label}) => <div>{label}{new Date().toLocaleTimeString()}</div>
-);
+const CurrentTime = ({label}) => <div>{label}{new Date().toLocaleTimeString()}</div>;
+const OneSecondClock = autoRefresh()(CurrentTime);
+const TwoSecondClock = autoRefresh(2000)(CurrentTime);
 
 ReactDOM.render(
-  <Clock label="Current time: " />,
+  <div>
+    <OneSecondClock label="One: " />
+    <TwoSecondClock label="Two: " />
+  </div>,
   document.getElementById('root-ex-1')
 );

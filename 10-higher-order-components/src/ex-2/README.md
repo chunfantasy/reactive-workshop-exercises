@@ -15,6 +15,7 @@ class User extends Component {
   }
 
   render () {
+    const {user} = this.props;
     return <div>
       <button onClick={this.toggle}>Toggle</button>
       {this.state.isOn && user.name}
@@ -24,8 +25,9 @@ class User extends Component {
 ````
 
 ````javascript
-const User = toggleable(({isOn, toggle, user}) => <div>
+let User = ({isOn, toggle, user}) => <div>
   <button onClick={toggle}>Toggle</button>
   {isOn && user.name}
-</div>);
+</div>;
+User = toggleable(User);
 ````
