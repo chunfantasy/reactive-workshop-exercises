@@ -6,10 +6,9 @@ let Counter = ({value, onIncrement}) => <p>
   {value}
   <button onClick={onIncrement}>+</button>
 </p>;
-
 Counter = connect(
-  ({value}) => ({value}),
-  dispatch => ({onIncrement: () => dispatch(increment())})
+  ({value}, ownProps) => ({value}),
+  (dispatch, ownProps) => ({onIncrement: () => dispatch(increment())})
 )(Counter);
 
 export default Counter;
