@@ -13,8 +13,8 @@ test('you understand pick 2', function () {
     {name: 'Hattori', age: 32}
   ];
 
-  expect(samurai.map(s => pick('name')(s))).toBe(__);
-  expect(samurai.map(pick('name'))).toBe(__);
+  expect(samurai.map(s => pick('name')(s))).toEqual(__);
+  expect(samurai.map(pick('name'))).toEqual(__);
 });
 
 test('you understand pick 3', function () {
@@ -24,7 +24,7 @@ test('you understand pick 3', function () {
     {name: 'Hattori', address: {street: 'Ninja Way', postcode: 'NW 2'}}
   ];
 
-  expect(samurai.map(s => pick('street')(pick('address')(s)))).toBe(__);
+  expect(samurai.map(s => pick('street')(pick('address')(s)))).toEqual(__);
 });
 
 test('you understand compose2', function () {
@@ -36,7 +36,7 @@ test('you understand compose2', function () {
   ];
 
   const whatDoesThisDo = compose2(pick('address'), pick('street'));
-  expect(samurai.map(whatDoesThisDo)).toBe(__);
+  expect(samurai.map(whatDoesThisDo)).toEqual(__);
 });
 
 test('you understand compose', function () {
@@ -48,7 +48,7 @@ test('you understand compose', function () {
   ];
 
   const whatDoesThisDo = compose(pick('address'), pick('street'), s => `Go to ${s}`);
-  expect(samurai.map(whatDoesThisDo)).toBe(__);
+  expect(samurai.map(whatDoesThisDo)).toEqual(__);
 });
 
 test('you understand compose 2', function () {
