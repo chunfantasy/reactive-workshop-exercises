@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 const __ = 'replace me so that the test is passing';
 
-it('should understand Subject', function () {
+test('you understand Subject', function () {
   let subject = new Subject(), result = 0;
   subject.subscribe(x => result += x);
 
@@ -14,7 +14,7 @@ it('should understand Subject', function () {
 
   expect(result).toBe(__);
 });
-it('should understand Subject 2', function () {
+test('you understand Subject 2', function () {
   let subject = new Subject(), result = 0;
   subject.next(1);
   subject.next(2);
@@ -24,7 +24,7 @@ it('should understand Subject 2', function () {
 
   expect(result).toBe(__);
 });
-it('should understand BehaviorSubject', function () {
+test('you understand BehaviorSubject', function () {
   let subject = new BehaviorSubject(0), result = 0;
   subject.next(1);
   subject.next(2);
@@ -34,7 +34,7 @@ it('should understand BehaviorSubject', function () {
 
   expect(result).toBe(__);
 });
-it('should understand ReplaySubject', function () {
+test('you understand ReplaySubject', function () {
   let subject = new ReplaySubject(), result = 0;
   subject.next(1);
   subject.next(2);
