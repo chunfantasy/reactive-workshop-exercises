@@ -24,3 +24,9 @@ Some projects have test, run them using:
 ````bash
 npm test
 ````
+
+## Upgrade
+
+````bash
+for i in *; do ( echo $i; cd $i; rm -fr package-lock.json node_modules; npm install; ); done
+````
