@@ -104,11 +104,11 @@ test('you understand computed property names', function () {
     age: 23,
     propertyName: 'Katana'
   };
-  expect(person1).toEqual(__);  
+  expect(person1).toEqual(__);
   const person2 = {
     name: 'Myamoto',
     age: 23,
     [propertyName]: 'Katana'
   };
-  expect(person2).toEqual(__);  
+  expect(person2).toEqual(__);
 });
