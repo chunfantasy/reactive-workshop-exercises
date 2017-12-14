@@ -22,3 +22,5 @@ ReactDOM.render(
   </div>,
   document.getElementById('root-ex-1')
 );
+
+export default autoRefresh;
