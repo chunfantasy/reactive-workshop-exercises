@@ -8,3 +8,4 @@ import './6-withState.js';
 
 import './ex-1';
 import './ex-2';
+import './ex-3';

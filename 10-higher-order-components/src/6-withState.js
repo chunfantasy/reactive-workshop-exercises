@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const withState = (propertyName, methodName, initialValue) => Component => class MyClass extends React.Component {
+const withState = (propertyName, methodName, initialValue) => Component => class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {[propertyName]: initialValue};
