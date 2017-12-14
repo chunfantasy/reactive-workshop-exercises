@@ -64,5 +64,5 @@ test('bmi', function () {
   expect(bmiPeter(65)).toBe(__);
   expect(bmiPaul(85)).toBe(__);
   expect(bmiPaul(75)).toBe(__);
-  expect(bmi(180)(80)).toBe(__);
+  expect(bmi(1.80)(80)).toBe(__);
 });
