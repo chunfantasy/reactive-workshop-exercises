@@ -1,3 +1,4 @@
 import './index.css';
 
-import './ex-1';
+import './1-reducer-divide-and-conquer.js';
+import './ex-3';
