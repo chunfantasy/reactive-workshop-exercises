@@ -18,15 +18,15 @@ const visibility = (state = true, action) => {
 let store;
 beforeEach(() => store = createStore(combineReducers({counter, visibility})));
 it('Should understand the shape of the state tree', () => {
-  expect(store.getState()).toBe(__);
+  expect(store.getState()).toEqual(__);
 });
 it('Should understand INCREMENT action', () => {
   store.dispatch({type: 'INCREMENT'});
 
-  expect(store.getState()).toBe(__);
+  expect(store.getState()).toEqual(__);
 });
 it('Should understand TOGGLE action', () => {
   store.dispatch({type: 'TOGGLE'});
 
-  expect(store.getState()).toBe(__);
+  expect(store.getState()).toEqual(__);
 });
