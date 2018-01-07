@@ -10,14 +10,21 @@ const App = () => <Router>
       <li><Link to="/user/123">User 123</Link></li>
       <li><Link to="/user/456">User 456</Link></li>
     </ul>
-    <Route path="/" component={() => <div>This is Home.</div>} />
-    <Route exact path="/" component={() => <div>This is exact Home.</div>} />
-    <Route path="/about" component={() => <div>This is About.</div>} />
-    <Route path="/user/:id" component={({match}) => <div>This is User with id: {match.params.id}</div>} />
+    <Route exact path="/" component={() => <div>This is Home.</div>} />
+    <Route path="/about">
+      {() => <div>This is About without guard.</div>}
+    </Route>
+    <Route path="/about">
+      {({match}) => match && <div>This is About with guard.</div>}
+    </Route>
+    <Route
+      path="/user/:id"
+      render={({match}) => <div>This is User with id: {match.params.id}</div>}
+    />
   </div>
 </Router>;
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root-1')
+  document.getElementById('root-2')
 );
