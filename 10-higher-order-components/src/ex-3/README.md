@@ -1,7 +1,7 @@
 EXERCISE
 ---
 
-Implement the restful() HOC so that it fetches 
+Implement the restful() HOC so that it encapsulates making HTTP GET requests (using fetch api). 
 
 ````html
 const MyIp = restful(
