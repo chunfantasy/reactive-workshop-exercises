@@ -1,3 +1,5 @@
+const __ = 'replace me so that the test is passing';
+
 describe('arrays', function () {
   test('should understand Array.from', function () {
     expect(Array.from('Myamoto')).toEqual(__);
