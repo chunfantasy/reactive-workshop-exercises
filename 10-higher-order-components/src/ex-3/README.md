@@ -13,7 +13,7 @@ const MessageOfTheDay = restful(
 
 ReactDOM.render(
   <div>
-    <MyIp url="/api/ipify" label="Current time:" />
+    <MyIp url="/api/ipify" label="IP Address:" />
     <MessageOfTheDay url="/api/motd" />
   </div>,
   document.getElementById('root-ex-3')

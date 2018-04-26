@@ -28,7 +28,7 @@ const MessageOfTheDay = restful(
 
 ReactDOM.render(
   <div>
-    <MyIp url="/api/ipify" label="Current time: " />
+    <MyIp url="/api/ipify" label="Your IP address is: " />
     <MessageOfTheDay url="/api/motd" />
   </div>,
   document.getElementById('root-ex-3')
