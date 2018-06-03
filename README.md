@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-* NodeJS 8.11.1+
-* NPM 5.6.0+
+* NodeJS 10.3.0+
+* NPM 6.1.0+
 
 ## Running the apps
 
