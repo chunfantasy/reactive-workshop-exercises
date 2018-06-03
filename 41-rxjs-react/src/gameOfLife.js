@@ -10,7 +10,8 @@ const isCellAlive = (currentState, row, column) => {
 
 const toggle = (currentState, row, column) => {
   const key = `${row}_${column}`;
-  return {...currentState, [key]: !currentState[key]};
+  const {[key]: isAlive, ...result} = currentState;
+  return isAlive ? result : {...result, [key]: true};
 };
 
 const tick = currentState => {
