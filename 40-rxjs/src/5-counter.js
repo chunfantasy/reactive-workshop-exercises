@@ -1,7 +1,7 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-const start$ = Observable.fromEvent(document.getElementById("start"), "click");
-const stop$ = Observable.fromEvent(document.getElementById("stop"), "click");
+const start$ = Observable.fromEvent(document.getElementById('start'), 'click');
+const stop$ = Observable.fromEvent(document.getElementById('stop'), 'click');
 const interval$ = Observable.interval(1000);
 
 start$.switchMap(e => interval$);

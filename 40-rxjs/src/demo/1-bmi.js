@@ -1,5 +1,5 @@
-import { Observable } from "rxjs/Observable";
-import "rxjs/Rx";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 const bmi = Observable.combineLatest(
   Observable.timer(0, 100)
@@ -11,4 +11,4 @@ const bmi = Observable.combineLatest(
   (weight, height) => weight / (height * height)
 );
 
-bmi.subscribe(bmi => console.log("BMI", bmi));
+bmi.subscribe(bmi => console.log('BMI', bmi));

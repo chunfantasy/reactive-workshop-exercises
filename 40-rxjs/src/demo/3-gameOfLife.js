@@ -1,29 +1,29 @@
-import { Observable } from "rxjs/Observable";
-import "rxjs/Rx";
-import "./3-gameOfLife.css";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+import './3-gameOfLife.css';
 
 const cellKey = (row, column) => `${row}_${column}`;
 const gameOfLife = Observable.merge(
-  Observable.fromEvent(document.getElementById("grid"), "click").map(
+  Observable.fromEvent(document.getElementById('grid'), 'click').map(
     ({ target }) => ({
-      type: "toggle",
-      row: parseInt(target.getAttribute("data-row"), 10),
-      column: parseInt(target.getAttribute("data-column"), 10)
+      type: 'toggle',
+      row: parseInt(target.getAttribute('data-row'), 10),
+      column: parseInt(target.getAttribute('data-column'), 10)
     })
   ),
-  Observable.fromEvent(document.getElementById("tick"), "click").map(e => ({
-    type: "tick"
+  Observable.fromEvent(document.getElementById('tick'), 'click').map(e => ({
+    type: 'tick'
   }))
 ).scan((currentState, { type, row, column }) => {
-  if (type === "toggle") {
+  if (type === 'toggle') {
     const key = cellKey(row, column);
     const { [key]: isAlive, ...result } = currentState;
     return isAlive ? result : { [key]: true, ...result };
   }
-  if (type === "tick") {
+  if (type === 'tick') {
     const numberOfNeighbours = {};
     for (let key in currentState) {
-      const [row, column] = key.split("_").map(p => parseInt(p, 10));
+      const [row, column] = key.split('_').map(p => parseInt(p, 10));
       numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
       [
         [-1, -1],
@@ -54,13 +54,13 @@ const gameOfLife = Observable.merge(
   return currentState;
 }, {});
 
-const { children: cells } = document.getElementById("grid");
+const { children: cells } = document.getElementById('grid');
 gameOfLife.subscribe(isAlive =>
   Array.prototype.forEach.call(cells, cell =>
     cell.classList.toggle(
-      "alive",
+      'alive',
       !!isAlive[
-        cellKey(cell.getAttribute("data-row"), cell.getAttribute("data-column"))
+        cellKey(cell.getAttribute('data-row'), cell.getAttribute('data-column'))
       ]
     )
   )

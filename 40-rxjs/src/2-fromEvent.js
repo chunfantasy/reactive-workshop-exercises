@@ -8,6 +8,6 @@ MyObservable.fromEvent = (target, eventType) => {
   };
 };
 
-const observable = MyObservable.fromEvent(document, "click");
+const observable = MyObservable.fromEvent(document, 'click');
 const unsubscribe = observable.subscribe(e => console.log(e));
 setTimeout(unsubscribe, 3000);

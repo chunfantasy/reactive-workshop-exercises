@@ -5,12 +5,8 @@ class AutoRefresh extends Component {
   componentDidMount() {
     this.interval = setInterval(() => this.forceUpdate(), this.props.interval);
   }
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-  render() {
-    return this.props.render({ now: new Date() });
-  }
+  componentWillUnmount = () => clearInterval(this.interval);
+  render = () => this.props.render({ now: new Date() });
 }
 
 const App = () => (

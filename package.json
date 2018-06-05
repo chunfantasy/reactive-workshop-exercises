@@ -60,5 +60,11 @@
         "^/api/ipify": ""
       }
     }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
