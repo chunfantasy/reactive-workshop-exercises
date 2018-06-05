@@ -6,10 +6,11 @@ const HelloWorld = () => {
     backgroundColor: 'grey',
     color: 'blue'
   };
-  return <div className="error" style={styleObject}>Hello!</div>;
+  return (
+    <div className="error" style={styleObject}>
+      Hello!
+    </div>
+  );
 };
 
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('root-3')
-);
+ReactDOM.render(<HelloWorld />, document.getElementById('root-3'));

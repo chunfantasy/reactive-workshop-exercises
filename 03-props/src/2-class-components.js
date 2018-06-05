@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Hello extends Component {
@@ -7,7 +7,4 @@ class Hello extends Component {
   }
 }
 
-ReactDOM.render(
-  <Hello name="World" />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<Hello name="World" />, document.getElementById('root-2'));

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Hello = ({name}) => <div>Hello {name}!</div>;
+const Hello = ({ name }) => <div>Hello {name}!</div>;
 
 Hello.propTypes = {
   name: PropTypes.string

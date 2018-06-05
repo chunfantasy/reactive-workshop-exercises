@@ -1,25 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Countdown extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {remainingTime: this.getRemainingTime()};
-  }
+  state = { remainingTime: this.getRemainingTime() };
 
   getRemainingTime() {
     const now = new Date();
     return Math.max(
       0,
-      Math.round(
-        (this.props.to.getTime() - now.getTime()) / 1000
-      )
+      Math.round((this.props.to.getTime() - now.getTime()) / 1000)
     );
   }
 
   componentDidMount() {
     this.interval = setInterval(
-      () => this.setState({remainingTime: this.getRemainingTime()}),
+      () => this.setState({ remainingTime: this.getRemainingTime() }),
       1000
     );
   }
@@ -29,7 +24,7 @@ class Countdown extends Component {
   }
 
   render() {
-    return <div>{this.state.remainingTime || 'Time\'s up!'}</div>;
+    return <div>{this.state.remainingTime || "Time's up!"}</div>;
   }
 }
 

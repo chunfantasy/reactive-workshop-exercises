@@ -12,37 +12,16 @@ import CounterWithArrow from './6-fixed-arrow.js';
 
 import './ex-2';
 
-ReactDOM.render(
-  <Alerter />,
-  document.getElementById('root-1')
-);
+ReactDOM.render(<Alerter />, document.getElementById('root-1'));
 
-ReactDOM.render(
-  <Alerter2 />,
-  document.getElementById('root-12')
-);
+ReactDOM.render(<Alerter2 />, document.getElementById('root-12'));
 
-ReactDOM.render(
-  <BrokenCounter />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<BrokenCounter />, document.getElementById('root-2'));
 
-ReactDOM.render(
-  <CounterWithBind1 />,
-  document.getElementById('root-3')
-);
+ReactDOM.render(<CounterWithBind1 />, document.getElementById('root-3'));
 
-ReactDOM.render(
-  <CounterWithBind2 />,
-  document.getElementById('root-4')
-);
+ReactDOM.render(<CounterWithBind2 />, document.getElementById('root-4'));
 
-ReactDOM.render(
-  <CounterExperimental />,
-  document.getElementById('root-5')
-);
+ReactDOM.render(<CounterExperimental />, document.getElementById('root-5'));
 
-ReactDOM.render(
-  <CounterWithArrow />,
-  document.getElementById('root-6')
-);
+ReactDOM.render(<CounterWithArrow />, document.getElementById('root-6'));

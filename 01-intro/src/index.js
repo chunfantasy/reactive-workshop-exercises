@@ -4,7 +4,4 @@ import './index.css';
 
 const HelloWorld = () => <div>Hello World!</div>;
 
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('root')
-);
+ReactDOM.render(<HelloWorld />, document.getElementById('root'));

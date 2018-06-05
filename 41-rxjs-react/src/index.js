@@ -2,12 +2,26 @@ import React from 'react';
 import { render } from 'react-dom';
 import { combineLatest, from, interval, merge } from 'rxjs';
 import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
-import { setObservableConfig, componentFromStream, createEventHandler } from 'recompose';
-import { isCellAlive, toggle, tick, GameOfLifePresentation } from './gameOfLife';
+import {
+  setObservableConfig,
+  componentFromStream,
+  createEventHandler
+} from 'recompose';
+import {
+  isCellAlive,
+  toggle,
+  tick,
+  GameOfLifePresentation
+} from './gameOfLife';
 
-setObservableConfig({ fromESObservable: from, toESObservable: stream => stream });
+setObservableConfig({
+  fromESObservable: from,
+  toESObservable: stream => stream
+});
 
-const Hello = componentFromStream(props$ => props$.pipe(map(({ name }) => <div>Hello {name}</div>)));
+const Hello = componentFromStream(props$ =>
+  props$.pipe(map(({ name }) => <div>Hello {name}</div>))
+);
 
 const Clock = componentFromStream(props$ =>
   props$.pipe(
@@ -57,7 +71,12 @@ const GameOfLifeContainer = componentFromStream(props$ => {
       startWith({}),
       scan(reducer)
     ),
-    ({ render }, isAlive) => render({ isAlive: (row, column) => isCellAlive(isAlive, row, column), onToggle, onTick })
+    ({ render }, isAlive) =>
+      render({
+        isAlive: (row, column) => isCellAlive(isAlive, row, column),
+        onToggle,
+        onTick
+      })
   );
 });
 
@@ -67,13 +86,22 @@ const GameOfLifeContainer2 = componentFromStream(props$ => {
   return combineLatest(
     props$,
     merge(
-      onToggle$.pipe(map(({ row, column }) => currentState => toggle(currentState, row, column))),
+      onToggle$.pipe(
+        map(({ row, column }) => currentState =>
+          toggle(currentState, row, column)
+        )
+      ),
       onTick$.pipe(mapTo(tick))
     ).pipe(
       startWith({}),
       scan((currentState, action) => action(currentState))
     ),
-    ({ render }, isAlive) => render({ isAlive: (row, column) => isCellAlive(isAlive, row, column), onToggle, onTick })
+    ({ render }, isAlive) =>
+      render({
+        isAlive: (row, column) => isCellAlive(isAlive, row, column),
+        onToggle,
+        onTick
+      })
   );
 });
 
@@ -89,10 +117,18 @@ const App = () => (
     <Counter />
 
     <h2>Game of Life</h2>
-    <GameOfLifeContainer render={props => <GameOfLifePresentation n={10} width={20} height={20} {...props} />} />
+    <GameOfLifeContainer
+      render={props => (
+        <GameOfLifePresentation n={10} width={20} height={20} {...props} />
+      )}
+    />
 
     <h2>Game of Life V2</h2>
-    <GameOfLifeContainer2 render={props => <GameOfLifePresentation n={10} width={20} height={20} {...props} />} />
+    <GameOfLifeContainer2
+      render={props => (
+        <GameOfLifePresentation n={10} width={20} height={20} {...props} />
+      )}
+    />
   </div>
 );
 

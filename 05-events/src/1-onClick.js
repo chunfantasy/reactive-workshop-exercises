@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Alerter extends Component {
   showMessage() {
@@ -6,9 +6,7 @@ class Alerter extends Component {
   }
 
   render() {
-    return <button onClick={this.showMessage}>
-      Click me
-    </button>;
+    return <button onClick={this.showMessage}>Click me</button>;
   }
 }
 

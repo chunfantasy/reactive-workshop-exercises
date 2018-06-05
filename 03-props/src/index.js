@@ -11,7 +11,4 @@ import './5-defaultProps';
 
 import './ex-2';
 
-ReactDOM.render(
-  <Greetings />,
-  document.getElementById('root-3')
-);
+ReactDOM.render(<Greetings />, document.getElementById('root-3'));

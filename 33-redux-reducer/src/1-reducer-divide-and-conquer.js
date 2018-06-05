@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 
 const counter = (state = 0, action) => {
   if (action.type === 'INCREMENT') {
@@ -23,6 +23,6 @@ const app = (state = {}, action) => {
 const store = createStore(app);
 store.subscribe(() => console.log('State changed', store.getState()));
 
-store.dispatch({type: 'INCREMENT'});
-store.dispatch({type: 'INCREMENT'});
-store.dispatch({type: 'TOGGLE'});
+store.dispatch({ type: 'INCREMENT' });
+store.dispatch({ type: 'INCREMENT' });
+store.dispatch({ type: 'TOGGLE' });

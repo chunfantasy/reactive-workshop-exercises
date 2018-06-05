@@ -12,25 +12,13 @@ import IllustrateMergingStateUpdates from './7-merging-updates.js';
 
 import './ex-1';
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root-3')
-);
+ReactDOM.render(<Clock />, document.getElementById('root-3'));
 
-ReactDOM.render(
-  <ClockWithLifecycle />,
-  document.getElementById('root-4')
-);
+ReactDOM.render(<ClockWithLifecycle />, document.getElementById('root-4'));
 
-ReactDOM.render(
-  <ClockBatching />,
-  document.getElementById('root-5')
-);
+ReactDOM.render(<ClockBatching />, document.getElementById('root-5'));
 
-ReactDOM.render(
-  <ClockBatchingSolution />,
-  document.getElementById('root-6')
-);
+ReactDOM.render(<ClockBatchingSolution />, document.getElementById('root-6'));
 
 ReactDOM.render(
   <IllustrateMergingStateUpdates />,

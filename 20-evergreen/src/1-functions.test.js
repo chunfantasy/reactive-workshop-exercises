@@ -5,13 +5,13 @@ class Person {
     this.name = name;
   }
 }
-test('you understand methods', function () {
+test('you understand methods', function() {
   const p = new Person();
   expect(p.name).toBe(__);
   p.setName('Myamoto');
   expect(p.name).toBe(__);
 });
-test('you understand methods 2', function () {
+test('you understand methods 2', function() {
   const p = new Person();
   const setName = p.setName;
   expect(typeof setName).toBe(__);

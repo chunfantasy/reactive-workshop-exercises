@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const MyIp = ({address}) => <div>{address}</div>;
+const MyIp = ({ address }) => <div>{address}</div>;
 
 fetch('/api/ipify')
   .then(response => response.text())

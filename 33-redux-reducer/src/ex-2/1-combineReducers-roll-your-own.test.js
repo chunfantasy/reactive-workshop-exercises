@@ -1,4 +1,4 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 
 const combineReducers = reducerMap => (state, action) => {
   //TODO implement this
@@ -18,7 +18,8 @@ const visibility = (state = true, action) => {
 };
 
 let store;
-beforeEach(() => store = createStore(combineReducers({counter, visibility})));
+beforeEach(() =>
+  (store = createStore(combineReducers({ counter, visibility }))));
 it('Should understand the shape of the state tree', () => {
   expect(store.getState()).toEqual({
     counter: 0,
@@ -26,7 +27,7 @@ it('Should understand the shape of the state tree', () => {
   });
 });
 it('Should understand INCREMENT action', () => {
-  store.dispatch({type: 'INCREMENT'});
+  store.dispatch({ type: 'INCREMENT' });
 
   expect(store.getState()).toEqual({
     counter: 1,
@@ -34,7 +35,7 @@ it('Should understand INCREMENT action', () => {
   });
 });
 it('Should understand TOGGLE action', () => {
-  store.dispatch({type: 'TOGGLE'});
+  store.dispatch({ type: 'TOGGLE' });
 
   expect(store.getState()).toEqual({
     counter: 0,

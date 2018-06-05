@@ -1,53 +1,46 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class Greetings extends Component {
-  constructor() {
-    super();
-    this.state = {
-      friends: [],
-      name: ''
-    };
-    this.id = 0;
-  }
+  state = { friends: [], name: '' };
+  id = 0;
   add = event => {
     event.preventDefault();
-    this.setState(({friends, name}) => ({
-      friends: [...friends, {name, id: this.id++}],
+    this.setState(({ friends, name }) => ({
+      friends: [...friends, { name, id: this.id++ }],
       name: ''
     }));
-  }
+  };
   remove = id => {
-    this.setState(({friends, name}) => ({
+    this.setState(({ friends, name }) => ({
       friends: friends.filter(friend => friend.id !== id),
       name
     }));
-  }
-  onChange = event => this.setState({name: event.target.value});
+  };
+  onChange = event => this.setState({ name: event.target.value });
   render() {
-    const {friends, name} = this.state;
-    return <div>
-      <form onSubmit={this.add}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={this.onChange} />
-        </label>
-        <input type="submit" value="Add" />
-      </form>
-      {
-        friends.length ? friends.map(({name, id}) => {
-          return <div
-            key={id}
-            onClick={() => this.remove(id)}>
-            {name}
-          </div>;
-        }) : 'No friends :('
-      }
-    </div>;
+    const { friends, name } = this.state;
+    return (
+      <div>
+        <form onSubmit={this.add}>
+          <label>
+            Name:
+            <input type="text" value={name} onChange={this.onChange} />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
+        {friends.length
+          ? friends.map(({ name, id }) => {
+              return (
+                <div key={id} onClick={() => this.remove(id)}>
+                  {name}
+                </div>
+              );
+            })
+          : 'No friends :('}
+      </div>
+    );
   }
 }
 
-ReactDOM.render(
-  <Greetings />,
-  document.getElementById('root-ex-1')
-);
+ReactDOM.render(<Greetings />, document.getElementById('root-ex-1'));

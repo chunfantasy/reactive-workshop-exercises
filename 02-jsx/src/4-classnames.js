@@ -11,10 +11,11 @@ const HelloWorld = () => {
     error: true,
     critical: 2 > 3
   };
-  return <div className={classnames(classObject)} style={styleObject}>Hello!</div>;
+  return (
+    <div className={classnames(classObject)} style={styleObject}>
+      Hello!
+    </div>
+  );
 };
 
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('root-4')
-);
+ReactDOM.render(<HelloWorld />, document.getElementById('root-4'));

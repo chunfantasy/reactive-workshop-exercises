@@ -9,22 +9,10 @@ import LoginForm2 from './4-computed-property-name-trick.js';
 
 import './ex-1';
 
-ReactDOM.render(
-  <LoginForm />,
-  document.getElementById('root-1')
-);
+ReactDOM.render(<LoginForm />, document.getElementById('root-1'));
 
-ReactDOM.render(
-  <FeedbackForm />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<FeedbackForm />, document.getElementById('root-2'));
 
-ReactDOM.render(
-  <ThemeSelectionForm />,
-  document.getElementById('root-3')
-);
+ReactDOM.render(<ThemeSelectionForm />, document.getElementById('root-3'));
 
-ReactDOM.render(
-  <LoginForm2 />,
-  document.getElementById('root-4')
-);
+ReactDOM.render(<LoginForm2 />, document.getElementById('root-4'));

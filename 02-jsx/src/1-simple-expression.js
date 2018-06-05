@@ -6,7 +6,4 @@ const HelloWorld = () => {
   return <div>Hello {name}!</div>;
 };
 
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('root-1')
-);
+ReactDOM.render(<HelloWorld />, document.getElementById('root-1'));

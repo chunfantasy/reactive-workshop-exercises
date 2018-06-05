@@ -1,15 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Clock extends Component {
-  constructor() {
-    super();
-    this.state = {value: 5};
-  }
+  state = { value: 5 };
 
   componentDidMount() {
-    this.setState({value: this.state.value - 1});
-    this.setState({value: this.state.value - 1});
-    this.setState({value: this.state.value - 1});
+    this.setState({ value: this.state.value - 1 });
+    this.setState({ value: this.state.value - 1 });
+    this.setState({ value: this.state.value - 1 });
   }
 
   render() {

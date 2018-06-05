@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 class MyIp extends Component {
@@ -7,7 +7,7 @@ class MyIp extends Component {
     this.state = {};
     fetch('/api/ipify')
       .then(response => response.text())
-      .then(address => this.setState({address}));
+      .then(address => this.setState({ address }));
   }
 
   render() {
@@ -15,7 +15,4 @@ class MyIp extends Component {
   }
 }
 
-ReactDOM.render(
-  <MyIp />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<MyIp />, document.getElementById('root-2'));

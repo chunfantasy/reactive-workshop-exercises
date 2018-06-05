@@ -11,7 +11,4 @@ const RandomGreeting = () => {
   return result;
 };
 
-ReactDOM.render(
-  <RandomGreeting />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<RandomGreeting />, document.getElementById('root-2'));

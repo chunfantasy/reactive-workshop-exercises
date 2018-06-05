@@ -10,14 +10,7 @@ const MessageOfTheDay = () => {
     'In theory, theory and practice are the same. In practice, they’re not.',
     'Good design adds value faster than it adds cost.'
   ];
-  return <div>
-    {
-      messages[Math.floor(messages.length * Math.random())]
-    }
-  </div>;
+  return <div>{messages[Math.floor(messages.length * Math.random())]}</div>;
 };
 
-ReactDOM.render(
-  <MessageOfTheDay />,
-  document.getElementById('root-ex-1')
-);
+ReactDOM.render(<MessageOfTheDay />, document.getElementById('root-ex-1'));

@@ -1,10 +1,10 @@
 const cellKey = (row, column) => `${row}_${column}`;
 
-const gameOfLife = function (state = {}, action) {
+const gameOfLife = function(state = {}, action) {
   if (action.type === 'TOGGLE_CELL_STATE') {
-    const {row, column} = action;
+    const { row, column } = action;
     const key = cellKey(row, column);
-    const result = {...state};
+    const result = { ...state };
     result[key] = !result[key];
     return result;
   }
@@ -13,14 +13,27 @@ const gameOfLife = function (state = {}, action) {
     for (let key in state) {
       const [row, column] = key.split('_').map(p => parseInt(p, 10));
       numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
-      [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]].forEach(function ([offsetRow, offsetCol]) {
+      [
+        [-1, -1],
+        [-1, 0],
+        [-1, 1],
+        [0, -1],
+        [0, 1],
+        [1, -1],
+        [1, 0],
+        [1, 1]
+      ].forEach(function([offsetRow, offsetCol]) {
         const neighbourKey = cellKey(row + offsetRow, column + offsetCol);
-        numberOfNeighbours[neighbourKey] = (numberOfNeighbours[neighbourKey] || 0) + 1;
+        numberOfNeighbours[neighbourKey] =
+          (numberOfNeighbours[neighbourKey] || 0) + 1;
       });
     }
     const result = {};
     for (let key in numberOfNeighbours) {
-      if (numberOfNeighbours[key] === 3 || (state[key] && numberOfNeighbours[key] === 2)) {
+      if (
+        numberOfNeighbours[key] === 3 ||
+        (state[key] && numberOfNeighbours[key] === 2)
+      ) {
         result[key] = true;
       }
     }

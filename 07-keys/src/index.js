@@ -11,17 +11,8 @@ import MoreElaboratePlayers from './5-problem.js';
 
 import './ex-2';
 
-ReactDOM.render(
-  <Players />,
-  document.getElementById('root-1')
-);
+ReactDOM.render(<Players />, document.getElementById('root-1'));
 
-ReactDOM.render(
-  <PlayersWithKey />,
-  document.getElementById('root-2')
-);
+ReactDOM.render(<PlayersWithKey />, document.getElementById('root-2'));
 
-ReactDOM.render(
-  <MoreElaboratePlayers />,
-  document.getElementById('root-5')
-);
+ReactDOM.render(<MoreElaboratePlayers />, document.getElementById('root-5'));

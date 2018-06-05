@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Component} from 'react';
+import { Component } from 'react';
 
 class Provider extends Component {
   constructor(props, context) {

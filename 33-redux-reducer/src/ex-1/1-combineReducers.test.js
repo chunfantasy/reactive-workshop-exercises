@@ -1,4 +1,4 @@
-import {combineReducers, createStore} from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 const __ = 'Replace this with concrete value so that the test is passing';
 
@@ -16,17 +16,18 @@ const visibility = (state = true, action) => {
 };
 
 let store;
-beforeEach(() => store = createStore(combineReducers({counter, visibility})));
+beforeEach(() =>
+  (store = createStore(combineReducers({ counter, visibility }))));
 it('Should understand the shape of the state tree', () => {
   expect(store.getState()).toEqual(__);
 });
 it('Should understand INCREMENT action', () => {
-  store.dispatch({type: 'INCREMENT'});
+  store.dispatch({ type: 'INCREMENT' });
 
   expect(store.getState()).toEqual(__);
 });
 it('Should understand TOGGLE action', () => {
-  store.dispatch({type: 'TOGGLE'});
+  store.dispatch({ type: 'TOGGLE' });
 
   expect(store.getState()).toEqual(__);
 });
