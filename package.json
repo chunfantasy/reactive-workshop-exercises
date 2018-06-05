@@ -1,7 +1,15 @@
 {
   "name": "reactive-workshop-exercises",
   "version": "0.1.0",
-  "private": true,
+  "description": "Reactive Programming Workshop Exercises",
+  "keywords": ["JavaScript", "Reactive Programming", "React", "Redux", "RxJS"],
+  "author": "Damjan Vujnovic",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "bootstrap": "4.1.1",
     "classnames": "2.2.5",
@@ -21,11 +29,16 @@
     "prettier": "1.13.4",
     "react-scripts": "1.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-react-app"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "proxy": {
     "/api/motd": {
@@ -60,14 +73,5 @@
         "^/api/ipify": ""
       }
     }
-  },
-  "babel": {
-    "presets": ["babel-preset-react-app"]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "prettier": {
-    "singleQuote": true
   }
 }
