@@ -2,5 +2,7 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
+  "jest.enableCodeLens": false,
+  "jest.enableInlineErrorMessages": false,
   "tslint.enable": false
 }
