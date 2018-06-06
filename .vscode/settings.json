@@ -2,6 +2,9 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
+  "files.exclude": {
+    "**/node_modules": true
+  },
   "jest.enableCodeLens": false,
   "jest.enableInlineErrorMessages": false,
   "tslint.enable": false
