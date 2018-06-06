@@ -2,14 +2,25 @@
   "name": "reactive-workshop-exercises",
   "version": "0.1.0",
   "description": "Reactive Programming Workshop Exercises",
-  "keywords": ["JavaScript", "Reactive Programming", "React", "Redux", "RxJS"],
-  "author": "Damjan Vujnovic",
+  "keywords": [
+    "JavaScript",
+    "Reactive Programming",
+    "React",
+    "Redux",
+    "RxJS"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/8pointers/reactive-workshop-exercises.git"
+  },
+  "author": "Damjan Vujnovic",
+  "license": "UNLICENSED",
   "dependencies": {
     "bootstrap": "4.1.1",
     "classnames": "2.2.5",

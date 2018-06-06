@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { combineLatest, from, interval, merge } from 'rxjs';
-import { map, mapTo, scan, startWith, switchMap } from 'rxjs/operators';
+import { map, mapTo, pluck, scan, startWith, switchMap } from 'rxjs/operators';
 import {
   setObservableConfig,
   componentFromStream,
@@ -23,9 +23,13 @@ const Hello = componentFromStream(props$ =>
   props$.pipe(map(({ name }) => <div>Hello {name}</div>))
 );
 
+const Hello2 = componentFromStream(map(({ name }) => <div>Hello {name}</div>));
+
 const Clock = componentFromStream(props$ =>
   props$.pipe(
-    switchMap(props => interval(props.interval).pipe(startWith(0))),
+    pluck('interval'),
+    switchMap(interval),
+    startWith(0),
     map(() => new Date().toLocaleString()),
     map(ts => <div>{ts}</div>)
   )
@@ -109,6 +113,7 @@ const App = () => (
   <div>
     <h2>Hello World</h2>
     <Hello name="World" />
+    <Hello2 name="World" />
 
     <h2>Clock</h2>
     <Clock interval={1000} />
