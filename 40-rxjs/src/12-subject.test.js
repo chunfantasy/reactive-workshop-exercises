@@ -1,6 +1,4 @@
-import { Subject } from 'rxjs/Subject';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 const __ = 'replace me so that the test is passing';
 
