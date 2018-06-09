@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 class AutoRefresh extends Component {
   componentDidMount() {
@@ -20,4 +20,4 @@ const App = () => (
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById('root-1'));
+render(<App />, document.getElementById('root-1'));

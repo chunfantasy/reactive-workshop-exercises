@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const Hello = ({ name }) => <div>Hello {name}!</div>;
 
@@ -12,7 +12,7 @@ Hello.defaultProps = {
   name: 'World'
 };
 
-ReactDOM.render(
+render(
   <div>
     <Hello name="Myamoto" />
     <Hello />

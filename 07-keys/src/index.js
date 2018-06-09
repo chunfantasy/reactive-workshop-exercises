@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import './index.css';
 
@@ -11,8 +11,8 @@ import MoreElaboratePlayers from './5-problem.js';
 
 import './ex-2';
 
-ReactDOM.render(<Players />, document.getElementById('root-1'));
+render(<Players />, document.getElementById('root-1'));
 
-ReactDOM.render(<PlayersWithKey />, document.getElementById('root-2'));
+render(<PlayersWithKey />, document.getElementById('root-2'));
 
-ReactDOM.render(<MoreElaboratePlayers />, document.getElementById('root-5'));
+render(<MoreElaboratePlayers />, document.getElementById('root-5'));

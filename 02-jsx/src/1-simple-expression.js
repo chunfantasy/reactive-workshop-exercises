@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const HelloWorld = () => {
   const name = 'World';
   return <div>Hello {name}!</div>;
 };
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root-1'));
+render(<HelloWorld />, document.getElementById('root-1'));

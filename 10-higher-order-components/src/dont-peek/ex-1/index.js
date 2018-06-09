@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const autoRefresh = (period = 1000) => MyComponent =>
   class AutoRefresh extends Component {
@@ -21,7 +21,7 @@ const CurrentTime = ({ label }) => (
 const OneSecondClock = autoRefresh()(CurrentTime);
 const TwoSecondClock = autoRefresh(2000)(CurrentTime);
 
-ReactDOM.render(
+render(
   <div>
     <OneSecondClock label="One: " />
     <TwoSecondClock label="Two: " />

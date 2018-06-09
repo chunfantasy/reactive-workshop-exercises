@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const Child = () => <div>Hello World!</div>;
 
@@ -10,4 +10,4 @@ const Parent = () => (
   </div>
 );
 
-ReactDOM.render(<Parent />, document.getElementById('root-6-1'));
+render(<Parent />, document.getElementById('root-6-1'));

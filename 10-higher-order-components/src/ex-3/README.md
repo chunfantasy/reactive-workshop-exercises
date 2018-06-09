@@ -11,7 +11,7 @@ const MessageOfTheDay = restful(
   ({data}) => <div>Welcome, your message of the day is: {data}</div>
 );
 
-ReactDOM.render(
+render(
   <div>
     <MyIp url="/api/ipify" label="IP Address:" />
     <MessageOfTheDay url="/api/motd" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const App = () => (
@@ -36,4 +36,4 @@ const App = () => (
   </Router>
 );
 
-ReactDOM.render(<App />, document.getElementById('root-2'));
+render(<App />, document.getElementById('root-2'));

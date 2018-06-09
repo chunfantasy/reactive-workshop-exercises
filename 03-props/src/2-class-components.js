@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 class Hello extends Component {
   render() {
@@ -7,4 +7,4 @@ class Hello extends Component {
   }
 }
 
-ReactDOM.render(<Hello name="World" />, document.getElementById('root-2'));
+render(<Hello name="World" />, document.getElementById('root-2'));

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 import './index.css';
 
@@ -11,4 +11,4 @@ import './5-defaultProps';
 
 import './ex-2';
 
-ReactDOM.render(<Greetings />, document.getElementById('root-3'));
+render(<Greetings />, document.getElementById('root-3'));

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const If = condition => Component => props => {
   return condition(props) && <Component {...props} />;
@@ -9,7 +9,7 @@ User = If(props => props.user)(User);
 let Score = ({ score }) => <div>Points: {score.points}</div>;
 Score = If(props => props.score)(Score);
 
-ReactDOM.render(
+render(
   <div>
     <User user={{ name: 'Myamoto' }} />
     <Score score={{ points: 123 }} />

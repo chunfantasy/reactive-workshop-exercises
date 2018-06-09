@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const toggleable = () => AComponent => {
   return class Toggleable extends Component {
@@ -34,7 +34,7 @@ const Account = toggleable()(({ isOn, toggle, account }) => (
   </div>
 ));
 
-ReactDOM.render(
+render(
   <div>
     <User user={{ name: 'Myamoto' }} />
     <Account account={{ balance: 123 }} />

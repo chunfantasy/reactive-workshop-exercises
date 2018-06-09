@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const withState = (propertyName, methodName, initialValue) => Component =>
   class extends React.Component {
@@ -23,4 +23,4 @@ const Player = withState('isVisible', 'setVisible', true)(
   )
 );
 
-ReactDOM.render(<Player name="Myamoto" />, document.getElementById('root-6'));
+render(<Player name="Myamoto" />, document.getElementById('root-6'));

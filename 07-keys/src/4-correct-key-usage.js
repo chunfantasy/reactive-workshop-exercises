@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const Hello = ({ name }) => <div>{name}</div>;
 
@@ -11,4 +11,4 @@ const Greetings = () => (
   </div>
 );
 
-ReactDOM.render(<Greetings />, document.getElementById('root-4'));
+render(<Greetings />, document.getElementById('root-4'));

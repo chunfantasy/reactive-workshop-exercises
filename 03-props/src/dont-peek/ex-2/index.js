@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import GameOfLife from './game-of-life.js';
 
-ReactDOM.render(
+render(
   <div>
     <GameOfLife n={2} width={50} height={50} />
     <GameOfLife />

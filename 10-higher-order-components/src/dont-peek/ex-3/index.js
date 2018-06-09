@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const restful = MyComponent =>
   class extends Component {
@@ -30,7 +30,7 @@ const MessageOfTheDay = restful(({ data }) => (
   <div>Welcome, your message of the day is: {data}</div>
 ));
 
-ReactDOM.render(
+render(
   <div>
     <MyIp url="/api/ipify" label="Your IP address is: " />
     <MessageOfTheDay url="/api/motd" />

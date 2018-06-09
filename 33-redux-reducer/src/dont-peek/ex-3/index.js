@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import { createStore } from 'redux';
 import gameOfLife from './gameOfLifeReducer';
@@ -7,7 +7,7 @@ import GameOfLife from './GameOfLife';
 
 const store = createStore(gameOfLife);
 const render = () =>
-  ReactDOM.render(
+  render(
     <GameOfLife
       width={20}
       height={20}

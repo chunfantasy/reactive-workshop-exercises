@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const RandomGreeting = () => {
   let result;
@@ -11,4 +11,4 @@ const RandomGreeting = () => {
   return result;
 };
 
-ReactDOM.render(<RandomGreeting />, document.getElementById('root-2'));
+render(<RandomGreeting />, document.getElementById('root-2'));

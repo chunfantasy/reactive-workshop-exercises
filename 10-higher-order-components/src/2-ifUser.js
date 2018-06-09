@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const IfUser = Component => props => {
   return props.user && <Component {...props} />;
@@ -7,7 +7,7 @@ const IfUser = Component => props => {
 let User = ({ user }) => <div>Name: {user.name}</div>;
 User = IfUser(User);
 
-ReactDOM.render(
+render(
   <div>
     <User user={{ name: 'Myamoto' }} />
     <User user={null} />

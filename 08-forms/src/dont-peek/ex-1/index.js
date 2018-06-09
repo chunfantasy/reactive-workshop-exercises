@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 class Greetings extends Component {
   state = { friends: [], name: '' };
@@ -43,4 +43,4 @@ class Greetings extends Component {
   }
 }
 
-ReactDOM.render(<Greetings />, document.getElementById('root-ex-1'));
+render(<Greetings />, document.getElementById('root-ex-1'));

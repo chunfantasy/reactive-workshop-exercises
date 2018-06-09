@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { createStore } from 'redux';
 
 const Counter = ({ value, onIncrement }) => (
@@ -14,7 +14,7 @@ const store = createStore((state = 0, action) => {
 });
 
 const render = () =>
-  ReactDOM.render(
+  render(
     <Counter
       value={store.getState()}
       onIncrement={() => store.dispatch({ type: 'INCREMENT' })}

@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createElement } from 'react';
+import { render } from 'react-dom';
 
-const Child = () => React.createElement('div', null, 'Hello World!');
+const Child = () => createElement('div', null, 'Hello World!');
 
 const Parent = () =>
-  React.createElement(
+  createElement(
     'div',
     null,
-    React.createElement(Child, null),
-    React.createElement('input', { type: 'button', value: 'Click me' })
+    createElement(Child, null),
+    createElement('input', { type: 'button', value: 'Click me' })
   );
 
-ReactDOM.render(
-  React.createElement(Parent, null),
-  document.getElementById('root-6-2')
-);
+render(createElement(Parent, null), document.getElementById('root-6-2'));

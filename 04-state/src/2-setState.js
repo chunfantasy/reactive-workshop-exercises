@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 class MyIp extends Component {
   constructor() {
@@ -15,4 +15,4 @@ class MyIp extends Component {
   }
 }
 
-ReactDOM.render(<MyIp />, document.getElementById('root-2'));
+render(<MyIp />, document.getElementById('root-2'));

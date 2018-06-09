@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 class Fetch extends Component {
   state = {};
@@ -22,4 +22,4 @@ const App = () => (
   </div>
 );
 
-ReactDOM.render(<App />, document.getElementById('root-ex-1'));
+render(<App />, document.getElementById('root-ex-1'));

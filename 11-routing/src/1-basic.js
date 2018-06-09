@@ -1,23 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
+// prettier-ignore
 const App = () => (
   <Router>
     <div>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/user/123">User 123</Link>
-        </li>
-        <li>
-          <Link to="/user/456">User 456</Link>
-        </li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/user/123">User 123</Link></li>
+        <li><Link to="/user/456">User 456</Link></li>
       </ul>
       <Route path="/" component={() => <div>This is Home.</div>} />
       <Route exact path="/" component={() => <div>This is exact Home.</div>} />
@@ -32,4 +24,4 @@ const App = () => (
   </Router>
 );
 
-ReactDOM.render(<App />, document.getElementById('root-1'));
+render(<App />, document.getElementById('root-1'));

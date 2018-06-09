@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const User = ({ user }) => user && <div>Name: {user.name}</div>;
 const Score = ({ score }) => score && <div>Points: {score.points}</div>;
 
-ReactDOM.render(
+render(
   <div>
     <User user={{ name: 'Myamoto' }} />
     <Score score={{ points: 123 }} />

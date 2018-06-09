@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
 const HelloWorld = () => {
   const styleObject = {
@@ -13,4 +13,4 @@ const HelloWorld = () => {
   );
 };
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root-3'));
+render(<HelloWorld />, document.getElementById('root-3'));
