@@ -2,6 +2,9 @@ import React from 'react';
 import classnames from 'classnames';
 import './Game.css';
 
+// prettier-ignore
+const offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+
 const cellKey = (row, column) => `${row}_${column}`;
 
 const isCellAlive = (currentState, row, column) =>
@@ -18,16 +21,7 @@ const tick = currentState => {
   for (let key in currentState) {
     const [row, column] = key.split('_').map(p => parseInt(p, 10));
     numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
-    [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, -1],
-      [0, 1],
-      [1, -1],
-      [1, 0],
-      [1, 1]
-    ].forEach(function([offsetRow, offsetCol]) {
+    offsets.forEach(function([offsetRow, offsetCol]) {
       const neighbourKey = cellKey(row + offsetRow, column + offsetCol);
       numberOfNeighbours[neighbourKey] =
         (numberOfNeighbours[neighbourKey] || 0) + 1;
@@ -45,14 +39,8 @@ const tick = currentState => {
   return result;
 };
 
-const GameOfLifePresentation = ({
-  n,
-  width,
-  height,
-  isAlive,
-  onToggle,
-  onTick
-}) => (
+// prettier-ignore
+const GameOfLifePresentation = ({ n, width, height, isAlive, onToggle, onTick }) => (
   <div style={{ width: n * width, height: n * height }}>
     <div>
       {Array.from({ length: n * n })

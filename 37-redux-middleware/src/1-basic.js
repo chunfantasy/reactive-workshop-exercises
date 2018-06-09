@@ -25,7 +25,7 @@ const store = createStore(
   applyMiddleware(loggingMiddleware)
 );
 
-const render = () =>
+const renderApp = () =>
   render(
     <Counter
       value={store.getState()}
@@ -33,5 +33,5 @@ const render = () =>
     />,
     document.getElementById('root')
   );
-render();
-store.subscribe(render);
+renderApp();
+store.subscribe(renderApp);

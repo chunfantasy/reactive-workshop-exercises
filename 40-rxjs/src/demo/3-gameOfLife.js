@@ -2,6 +2,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import './3-gameOfLife.css';
 
+// prettier-ignore
+const offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+
 const cellKey = (row, column) => `${row}_${column}`;
 const gameOfLife = Observable.merge(
   Observable.fromEvent(document.getElementById('grid'), 'click').map(
@@ -25,16 +28,7 @@ const gameOfLife = Observable.merge(
     for (let key in currentState) {
       const [row, column] = key.split('_').map(p => parseInt(p, 10));
       numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
-      [
-        [-1, -1],
-        [-1, 0],
-        [-1, 1],
-        [0, -1],
-        [0, 1],
-        [1, -1],
-        [1, 0],
-        [1, 1]
-      ].forEach(function([offsetRow, offsetCol]) {
+      offsets.forEach(function([offsetRow, offsetCol]) {
         const neighbourKey = cellKey(row + offsetRow, column + offsetCol);
         numberOfNeighbours[neighbourKey] =
           (numberOfNeighbours[neighbourKey] || 0) + 1;

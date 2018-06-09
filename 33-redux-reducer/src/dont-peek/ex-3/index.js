@@ -6,7 +6,7 @@ import gameOfLife from './gameOfLifeReducer';
 import GameOfLife from './GameOfLife';
 
 const store = createStore(gameOfLife);
-const render = () =>
+const renderApp = () =>
   render(
     <GameOfLife
       width={20}
@@ -20,5 +20,5 @@ const render = () =>
     />,
     document.getElementById('root')
   );
-render();
-store.subscribe(render);
+renderApp();
+store.subscribe(renderApp);

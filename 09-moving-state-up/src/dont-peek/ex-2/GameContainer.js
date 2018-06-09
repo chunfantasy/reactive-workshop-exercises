@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Game.css';
 import Game from './Game.js';
 
+// prettier-ignore
+const offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+
 class GameContainer extends Component {
   state = { isAlive: {} };
   cellKey = (row, column) => `${row}_${column}`;
@@ -26,16 +29,7 @@ class GameContainer extends Component {
       for (let key in isAlive) {
         const [row, column] = key.split('_').map(p => parseInt(p, 10));
         numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
-        [
-          [-1, -1],
-          [-1, 0],
-          [-1, 1],
-          [0, -1],
-          [0, 1],
-          [1, -1],
-          [1, 0],
-          [1, 1]
-        ].forEach(function([offsetRow, offsetCol]) {
+        offsets.forEach(function([offsetRow, offsetCol]) {
           const neighbourKey = this.cellKey(
             row + offsetRow,
             column + offsetCol

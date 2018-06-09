@@ -13,7 +13,7 @@ const store = createStore((state = 0, action) => {
   return action.type === 'INCREMENT' ? state + 1 : state;
 });
 
-const render = () =>
+const renderApp = () =>
   render(
     <Counter
       value={store.getState()}
@@ -21,5 +21,5 @@ const render = () =>
     />,
     document.getElementById('root')
   );
-render();
-store.subscribe(render);
+renderApp();
+store.subscribe(renderApp);

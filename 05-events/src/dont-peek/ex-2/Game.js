@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import './Game.css';
 
-const offsets = [
-  [-1, -1],
-  [-1, 0],
-  [-1, 1],
-  [0, -1],
-  [0, 1],
-  [1, -1],
-  [1, 0],
-  [1, 1]
-];
+// prettier-ignore
+const offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
 
 class Game extends Component {
   state = { isAlive: {} };
