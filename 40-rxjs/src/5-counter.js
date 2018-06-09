@@ -1,15 +1,12 @@
-import { Observable } from 'rxjs/Observable';
+import { fromEvent, interval } from 'rxjs';
+import { scan, switchMap, takeUntil } from 'rxjs/operators';
 
-const start$ = Observable.fromEvent(document.getElementById('start'), 'click');
-const stop$ = Observable.fromEvent(document.getElementById('stop'), 'click');
-const interval$ = Observable.interval(1000);
-
-start$.switchMap(e => interval$);
-start$.switchMapTo(interval$);
-
-const intervalThatStartsAndStops$ = start$
-  .switchMap(e => interval$.startWith(0).takeUntil(stop$))
-  .startWith(0)
-  .scan(acc => acc + 1);
+const start = document.getElementById('start');
+const stop = document.getElementById('stop');
+const intervalThatStartsAndStops$ = fromEvent(start, 'click').pipe(
+  switchMap(e => interval(1000)),
+  takeUntil(fromEvent(stop, 'click')),
+  scan(acc => acc + 1)
+);
 
 intervalThatStartsAndStops$.subscribe(console.log);
