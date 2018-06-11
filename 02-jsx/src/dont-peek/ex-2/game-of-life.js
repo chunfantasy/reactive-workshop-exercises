@@ -1,5 +1,6 @@
 import React from 'react';
 import './game-of-life.css';
+import classnames from 'classnames';
 
 const GameOfLife = () => {
   const n = 8,
@@ -10,9 +11,10 @@ const GameOfLife = () => {
       <div style={{ width: n * width, height: n * height }}>
         {Array.from({ length: n * n })
           .map((value, index) => ({ x: index % n, y: Math.floor(index / n) }))
-          .map(({ x, y }) => (
+          .map(({ x, y }) => ({ x, y, alive: (x + y) % 2 }))
+          .map(({ x, y, alive }) => (
             <div
-              className={'cell' + ((x + y) % 2 ? '' : ' alive')}
+              className={classnames({ cell: true, alive })}
               style={{
                 top: 20 * x,
                 left: 20 * y,
