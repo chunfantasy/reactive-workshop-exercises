@@ -21,6 +21,15 @@ cd 01-intro
 npm start
 ````
 
+In case your OS doesn't support symlinks:
+
+````bash
+git clone https://bitbucket.org/8pointers/reactive-workshop-exercises.git
+cd reactive-workshop-exercises/01-intro
+rm package.json node_modules
+cp ../package.json .
+npm install
+````
 For apps that have tests, run them using:
 
 ````bash
