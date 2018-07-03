@@ -1,37 +1,27 @@
-const cellKey = (row, column) => `${row}_${column}`;
+const cellKey = ({ row, column }) => `${row}_${column}`;
 
 // prettier-ignore
-const offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+const deltas = Array.from({ length: 9 }, (_, i) => [Math.floor(i / 3) - 1, (i % 3) - 1, i === 4 ? 0 : 1]);
 
-const gameOfLife = function(state = {}, action) {
-  if (action.type === 'TOGGLE_CELL_STATE') {
-    const { row, column } = action;
-    const key = cellKey(row, column);
-    const result = { ...state };
-    result[key] = !result[key];
-    return result;
+const gameOfLife = function(state = {}, { type, ...payload }) {
+  if (type === 'TOGGLE_CELL_STATE') {
+    const key = cellKey(payload);
+    const { [key]: isAlive, ...result } = state;
+    return isAlive ? result : { [key]: true, ...result };
   }
-  if (action.type === 'TICK') {
-    const numberOfNeighbours = {};
-    for (let key in state) {
-      const [row, column] = key.split('_').map(p => parseInt(p, 10));
-      numberOfNeighbours[key] = numberOfNeighbours[key] || 0;
-      offsets.forEach(function([offsetRow, offsetCol]) {
-        const neighbourKey = cellKey(row + offsetRow, column + offsetCol);
-        numberOfNeighbours[neighbourKey] =
-          (numberOfNeighbours[neighbourKey] || 0) + 1;
-      });
-    }
-    const result = {};
-    for (let key in numberOfNeighbours) {
-      if (
-        numberOfNeighbours[key] === 3 ||
-        (state[key] && numberOfNeighbours[key] === 2)
-      ) {
-        result[key] = true;
-      }
-    }
-    return result;
+  if (type === 'TICK') {
+    const neighbours = Object.keys(state)
+      .map(k => k.split('_').map(p => parseInt(p, 10)))
+      .map(([r, c]) => deltas.map(([dr, dc, dn]) => [r + dr, c + dc, dn]))
+      .reduce((result, current) => [...result, ...current], [])
+      .map(([row, column, dn]) => [`${row}_${column}`, dn])
+      .reduce(
+        (result, [k, dn]) => ({ ...result, [k]: (result[k] || 0) + dn }),
+        {}
+      );
+    return Object.keys(neighbours)
+      .filter(k => (state[k] && neighbours[k] === 2) || neighbours[k] === 3)
+      .reduce((result, key) => ({ ...result, [key]: true }), {});
   }
   return state;
 };
