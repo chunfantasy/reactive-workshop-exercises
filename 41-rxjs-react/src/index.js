@@ -1,3 +1,4 @@
+import Symbol_observable from 'symbol-observable'; // eslint-disable-line no-unused-vars
 import React from 'react';
 import { render } from 'react-dom';
 import { combineLatest, from, interval, merge } from 'rxjs';
