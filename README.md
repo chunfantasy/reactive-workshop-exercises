@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - git client
-- NodeJS 10.3.0+ & NPM 6.1.0+
+- NodeJS 10.9.0+ & NPM 6.2.0+
 - Recommended Visual Studio Code extensions:
     - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
     - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -13,7 +13,7 @@
 ## Running the apps
 
 ````bash
-git clone https://bitbucket.org/8pointers/reactive-workshop-exercises.git
+git clone -c core.symlinks=true https://bitbucket.org/8pointers/reactive-workshop-exercises.git
 cd reactive-workshop-exercises
 npm install
 
@@ -29,6 +29,7 @@ cd reactive-workshop-exercises/01-intro
 rm package.json node_modules
 cp ../package.json .
 npm install
+npm start
 ````
 For apps that have tests, run them using:
 
