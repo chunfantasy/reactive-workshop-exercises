@@ -1,4 +1,5 @@
 import './index.css';
+import './0-locate.js';
 import './1-problem.js';
 import './2-ifUser.js';
 import './3-ifUser2.js';
