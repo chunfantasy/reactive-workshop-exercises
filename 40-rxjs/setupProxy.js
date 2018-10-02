@@ -1,1 +1,0 @@
-../setupProxy.js
