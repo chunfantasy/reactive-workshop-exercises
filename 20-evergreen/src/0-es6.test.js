@@ -1,12 +1,26 @@
 const __ = 'replace me so that the test is passing';
 
 describe('fat arrow functions', function() {
+  test('you understand fat-arrow functions 0', function() {
+    const getName = player => {
+      return player.name;
+    };
+    expect(getName({ name: 'Myamoto', age: 23 })).toBe(__);
+  });
+
   test('you understand fat-arrow functions 1', function() {
     const getName = player => player.name;
     expect(getName({ name: 'Myamoto', age: 23 })).toBe(__);
   });
 
   test('you understand fat-arrow functions 2', function() {
+    const getName = player => {
+      player.name;
+    };
+    expect(getName({ name: 'Myamoto', age: 23 })).toBe(__);
+  });
+
+  test('you understand fat-arrow functions 3', function() {
     const samurai = [
       { name: 'Myamoto', age: 23 },
       { name: 'Hattori', age: 34 },
