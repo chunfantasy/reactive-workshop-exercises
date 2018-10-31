@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 const showMessage = () => alert('Hello World!');
 // prettier-ignore
 const Alerter = () => <div>
