@@ -28,8 +28,9 @@ In case your OS doesn't support symlinks:
 ```bash
 git clone https://bitbucket.org/8pointers/reactive-workshop-exercises.git
 cd reactive-workshop-exercises/01-intro
-rm package.json node_modules
+rm package.json node_modules src/setupProxy.js
 cp ../package.json .
+cp ../setupProxy.js src
 npm install
 npm start
 ```
