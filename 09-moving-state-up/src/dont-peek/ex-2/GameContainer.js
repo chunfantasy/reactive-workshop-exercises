@@ -50,19 +50,14 @@ class GameContainer extends Component {
       return { isAlive: result };
     });
   };
-  render() {
-    const { n, width, height } = this.props;
-    return (
-      <Game
-        n={n}
-        width={width}
-        height={height}
-        isCellAlive={this.isCellAlive}
-        toggleCellState={this.toggleCellState}
-        tick={this.tick}
-      />
-    );
-  }
+  render = () => (
+    <Game
+      {...this.props}
+      isCellAlive={this.isCellAlive}
+      toggleCellState={this.toggleCellState}
+      tick={this.tick}
+    />
+  );
 }
 
 export default GameContainer;

@@ -11,12 +11,10 @@ class Greetings extends Component {
       name: ''
     }));
   };
-  remove = id => {
-    this.setState(({ friends, name }) => ({
-      friends: friends.filter(friend => friend.id !== id),
-      name
+  remove = id =>
+    this.setState(({ friends }) => ({
+      friends: friends.filter(friend => friend.id !== id)
     }));
-  };
   onChange = event => this.setState({ name: event.target.value });
   render() {
     const { friends, name } = this.state;
