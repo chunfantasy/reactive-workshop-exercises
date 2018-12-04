@@ -13,12 +13,9 @@ const gameOfLife = function(state = {}, { type, ...payload }) {
     const neighbours = Object.keys(state)
       .map(k => k.split('_').map(p => parseInt(p, 10)))
       .map(([r, c]) => deltas.map(([dr, dc, dn]) => [r + dr, c + dc, dn]))
-      .reduce((result, current) => [...result, ...current], [])
+      .flat()
       .map(([row, column, dn]) => [`${row}_${column}`, dn])
-      .reduce(
-        (result, [k, dn]) => ({ ...result, [k]: (result[k] || 0) + dn }),
-        {}
-      );
+      .reduce((acc, [k, dn]) => ({ ...acc, [k]: (acc[k] || 0) + dn }), {});
     return Object.keys(neighbours)
       .filter(k => (state[k] && neighbours[k] === 2) || neighbours[k] === 3)
       .reduce((result, key) => ({ ...result, [key]: true }), {});
