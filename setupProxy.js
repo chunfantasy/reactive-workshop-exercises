@@ -34,4 +34,4 @@ const config = {
   }
 };
 module.exports = app =>
-  Object.keys(config).forEach(path => app.use(proxy(path, config[path])));
+  Object.entries(config).forEach(e => app.use(proxy(...e)));
