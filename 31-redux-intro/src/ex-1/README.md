@@ -1,4 +1,3 @@
-Exercise
-===
+# Exercise
 
-Add a new feature to the Counter - the ability to decrement.
+Add a new feature to the Counter - the ability to decrement the counter value.

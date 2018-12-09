@@ -8,9 +8,7 @@ class Fetch extends Component {
     const data = await response.text();
     this.setState({ data });
   }
-  render() {
-    return this.props.render(this.state);
-  }
+  render = () => this.props.render(this.state);
 }
 
 const App = () => (
