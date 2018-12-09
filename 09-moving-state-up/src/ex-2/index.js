@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Game from './Game.js';
+import GameOfLife from './game-of-life.js';
 
 render(
-  <Game n={10} width={20} height={20} />,
+  <GameOfLife n={10} width={20} height={20} />,
   document.getElementById('root-ex-2')
 );
