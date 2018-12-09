@@ -10,17 +10,12 @@ const GameOfLife = () => {
     <div>
       <div style={{ width: n * width, height: n * height }}>
         {Array.from({ length: n * n })
-          .map((value, index) => ({ x: index % n, y: Math.floor(index / n) }))
+          .map((_, index) => ({ x: index % n, y: Math.floor(index / n) }))
           .map(({ x, y }) => ({ x, y, alive: (x + y) % 2 }))
           .map(({ x, y, alive }) => (
             <div
               className={classnames({ cell: true, alive })}
-              style={{
-                top: 20 * x,
-                left: 20 * y,
-                width,
-                height
-              }}
+              style={{ top: 20 * x, left: 20 * y, width, height }}
             />
           ))}
       </div>

@@ -11,12 +11,7 @@ const GameOfLife = ({ n, width, height }) => (
         .map(({ row, column }) => (
           <div
             className={classnames({ cell: true, alive: (row + column) % 2 })}
-            style={{
-              top: 20 * row,
-              left: 20 * column,
-              width,
-              height
-            }}
+            style={{ top: 20 * row, left: 20 * column, width, height }}
           />
         ))}
     </div>
