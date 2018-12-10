@@ -5,4 +5,5 @@ Default values should be n = 10, width = 20, height = 20.
 
 ```javascript
 <GameOfLife n={2} width={50} height={50} />
+<GameOfLife />
 ```
