@@ -4,5 +4,5 @@ Implement a React component that renders a game of life. Cells should alternate 
 Default values should be n = 10, width = 20, height = 20.
 
 ```html
-<GameOfLife n="{2}" width="{50}" height="{50}" />
+<GameOfLife n={2} width={50} height={50} />
 ```
