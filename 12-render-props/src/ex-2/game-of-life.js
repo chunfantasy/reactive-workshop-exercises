@@ -10,7 +10,7 @@ const Cell = ({ width, height, isAlive, row, column, onClick }) => (
   />
 );
 
-const Game = ({ n, width, height, isCellAlive, toggleCellState, tick }) => (
+const Presentation = ({ n, width, height, isCellAlive, toggle, tick }) => (
   <div style={{ width: n * width, height: n * height }}>
     <div>
       {Array.from({ length: n * n })
@@ -23,7 +23,7 @@ const Game = ({ n, width, height, isCellAlive, toggleCellState, tick }) => (
             isAlive={isCellAlive(row, column)}
             row={row}
             column={column}
-            onClick={() => toggleCellState(row, column)}
+            onClick={() => toggle(row, column)}
           />
         ))}
     </div>
@@ -36,7 +36,7 @@ const cellKey = (row, col) => `${row}_${col}`;
 class GameOfLifeContainer extends Component {
   state = { isAlive: {} };
   isCellAlive = (row, col) => this.state.isAlive[cellKey(row, col)];
-  toggleCellState = (row, col) =>
+  toggle = (row, col) =>
     this.setState(({ isAlive }) => {
       const key = cellKey(row, col);
       const { [key]: isCellAlive, ...result } = isAlive;
@@ -53,10 +53,10 @@ class GameOfLifeContainer extends Component {
       .then(response => response.json())
       .then(isAlive => this.setState({ isAlive }));
   render = () => (
-    <Game
+    <Presentation
       {...this.props}
       isCellAlive={this.isCellAlive}
-      toggleCellState={this.toggleCellState}
+      toggle={this.toggle}
       tick={this.tick}
     />
   );
