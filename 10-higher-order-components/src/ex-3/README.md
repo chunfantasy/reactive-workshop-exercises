@@ -1,15 +1,16 @@
-EXERCISE
----
+## EXERCISE
 
-Implement the restful() HOC so that it encapsulates making HTTP GET requests (using fetch api). 
+Implement the restful() HOC so that it encapsulates making HTTP GET requests (using fetch api).
 
-````html
-const MyIp = restful(
-  ({label, data}) => <div>{label}: {data}</div>
-);
-const MessageOfTheDay = restful(
-  ({data}) => <div>Welcome, your message of the day is: {data}</div>
-);
+```javascript
+const MyIp = restful(({ label, data }) => (
+  <div>
+    {label}: {data}
+  </div>
+));
+const MessageOfTheDay = restful(({ data }) => (
+  <div>Welcome, your message of the day is: {data}</div>
+));
 
 render(
   <div>
@@ -18,4 +19,4 @@ render(
   </div>,
   document.getElementById('root-ex-3')
 );
-````
+```

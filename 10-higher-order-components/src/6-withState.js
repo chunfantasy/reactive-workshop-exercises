@@ -17,7 +17,7 @@ const withState = (propertyName, methodName, initialValue) => Component =>
 const Player = withState('isVisible', 'setVisible', true)(
   ({ name, isVisible, setVisible }) => (
     <div>
-      <div onClick={() => setVisible(!isVisible)}>Toggle</div>
+      <button onClick={() => setVisible(!isVisible)}>Toggle</button>
       {isVisible && <div>{name}</div>}
     </div>
   )
