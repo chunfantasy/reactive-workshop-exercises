@@ -19,12 +19,7 @@ let GameOfLife = ({ width, height, n, isAlive, onToggle, onTick }) => {
                 cell: true,
                 alive: isAlive[`${row}_${column}`]
               })}
-              style={{
-                top: 20 * row,
-                left: 20 * column,
-                width,
-                height
-              }}
+              style={{ top: 20 * row, left: 20 * column, width, height }}
               onClick={() => onToggle(row, column)}
             />
           ))}
@@ -35,9 +30,7 @@ let GameOfLife = ({ width, height, n, isAlive, onToggle, onTick }) => {
 };
 
 GameOfLife = connect(
-  state => ({
-    isAlive: state
-  }),
+  isAlive => ({ isAlive }),
   dispatch => ({
     onToggle: (row, column) => dispatch(toggle(row, column)),
     onTick: () => dispatch(tick())

@@ -9,16 +9,7 @@ import GameOfLife from './game-of-life';
 const store = createStore(gameOfLife);
 render(
   <Provider store={store}>
-    <GameOfLife
-      width={20}
-      height={20}
-      n={10}
-      isAlive={store.getState()}
-      onToggle={(row, column) =>
-        store.dispatch({ type: 'TOGGLE_CELL_STATE', row, column })
-      }
-      onTick={() => store.dispatch({ type: 'TICK' })}
-    />
+    <GameOfLife width={20} height={20} n={10} />
   </Provider>,
   document.getElementById('root-ex-1')
 );
