@@ -4,11 +4,12 @@ const anotherReducerCombinator = reducers => (state, action) => {
 };
 
 const reducer = anotherReducerCombinator({
-  INCREMENT: (state, action) => state + 1,
-  DECREMENT: (state, action) => state - 1,
-  DOUBLE: (state, action) => state * 2
+  INCREMENT: state => state + 1,
+  DECREMENT: state => state - 1,
+  MULTIPLY: (state, action) => state * action.multiplier
 });
 
 console.log(reducer(123, { type: 'INCREMENT' }));
 console.log(reducer(123, { type: 'DECREMENT' }));
+console.log(reducer(123, { type: 'MULTIPLY', multiplier: 3 }));
 console.log(reducer(123, { type: 'UNKNOWN' }));
