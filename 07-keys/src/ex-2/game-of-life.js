@@ -15,9 +15,7 @@ class GameOfLife extends Component {
     this.setState(({ isAlive }) => {
       const key = cellKey(row, col);
       const { [key]: isCellAlive, ...result } = isAlive;
-      return {
-        isAlive: isCellAlive ? result : { [key]: true, ...result }
-      };
+      return { isAlive: isCellAlive ? result : { [key]: true, ...result } };
     });
   }
   tick() {
@@ -43,6 +41,7 @@ class GameOfLife extends Component {
             .map((_, i) => ({ row: Math.floor(i / n), column: i % n }))
             .map(({ row, column }, index) => (
               <div
+                key={cellKey(row, column)}
                 className={classnames({
                   cell: true,
                   alive: this.isCellAlive(row, column)

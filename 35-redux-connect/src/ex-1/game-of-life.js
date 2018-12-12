@@ -1,14 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const GameOfLife = ({
-  width,
-  height,
-  n,
-  isAlive,
-  onToggleCellState,
-  onTick
-}) => {
+const GameOfLife = ({ width, height, n, isAlive, onToggle, onTick }) => {
   return (
     <div style={{ width: n * width, height: n * height }}>
       <div>
@@ -30,7 +23,7 @@ const GameOfLife = ({
                 width,
                 height
               }}
-              onClick={() => onToggleCellState(row, column)}
+              onClick={() => onToggle(row, column)}
             />
           ))}
       </div>
