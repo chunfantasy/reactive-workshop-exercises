@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import classnames from 'classnames';
+import './style.css';
 
 const filters = {
   all: () => true,
@@ -36,7 +38,7 @@ class Greetings extends Component {
     return (
       <div>
         {Object.keys(filters).map(filter => (
-          <span style={{ fontWeight: filter === this.state.filter ? 'bold' : 'normal' }} onClick={() => this.setState({ filter })}>
+          <span className={classnames({ selected: filter === this.state.filter })} onClick={() => this.setState({ filter })}>
             {filter}{' '}
           </span>
         ))}
@@ -50,7 +52,7 @@ class Greetings extends Component {
         {friends.length
           ? friends.filter(filters[this.state.filter]).map(({ name, id, isRemoved }) => {
               return (
-                <div key={id} style={{ textDecoration: isRemoved ? 'line-through' : '' }} onClick={() => this.remove(id)}>
+                <div key={id} className={classnames({ removed: isRemoved })} onClick={() => this.remove(id)}>
                   {name}
                 </div>
               );
