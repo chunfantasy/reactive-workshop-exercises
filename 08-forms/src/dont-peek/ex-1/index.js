@@ -20,7 +20,7 @@ class Greetings extends Component {
     name: '',
     filter: 'all'
   };
-  id = this.state.length;
+  id = this.state.friends.length;
   add = event => {
     event.preventDefault();
     this.setState(({ friends, name }) => ({
@@ -30,7 +30,9 @@ class Greetings extends Component {
   };
   remove = id =>
     this.setState(({ friends }) => ({
-      friends: friends.map(friend => (friend.id === id ? { ...friend, isRemoved: !friend.isRemoved } : friend))
+      friends: friends.map(friend =>
+        friend.id === id ? { ...friend, isRemoved: !friend.isRemoved } : friend
+      )
     }));
   onChange = event => this.setState({ name: event.target.value });
   render() {
@@ -38,7 +40,10 @@ class Greetings extends Component {
     return (
       <div>
         {Object.keys(filters).map(filter => (
-          <span className={classnames({ selected: filter === this.state.filter })} onClick={() => this.setState({ filter })}>
+          <span
+            className={classnames({ selected: filter === this.state.filter })}
+            onClick={() => this.setState({ filter })}
+          >
             {filter}{' '}
           </span>
         ))}
@@ -50,13 +55,19 @@ class Greetings extends Component {
           <input type="submit" value="Add" />
         </form>
         {friends.length
-          ? friends.filter(filters[this.state.filter]).map(({ name, id, isRemoved }) => {
-              return (
-                <div key={id} className={classnames({ removed: isRemoved })} onClick={() => this.remove(id)}>
-                  {name}
-                </div>
-              );
-            })
+          ? friends
+              .filter(filters[this.state.filter])
+              .map(({ name, id, isRemoved }) => {
+                return (
+                  <div
+                    key={id}
+                    className={classnames({ removed: isRemoved })}
+                    onClick={() => this.remove(id)}
+                  >
+                    {name}
+                  </div>
+                );
+              })
           : 'No friends :('}
       </div>
     );
