@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
+const filters = {
+  all: () => true,
+  removed: friend => friend.isRemoved,
+  notRemoved: friend => !friend.isRemoved
+};
+
 class Greetings extends Component {
-  state = { friends: [], name: '' };
-  id = 0;
+  state = {
+    friends: [
+      { name: 'First', id: 0 },
+      { name: 'Second', isRemoved: true, id: 1 },
+      { name: 'Third', id: 2 },
+      { name: 'Fourth', isRemoved: true, id: 3 }
+    ],
+    name: '',
+    filter: 'all'
+  };
+  id = this.state.length;
   add = event => {
     event.preventDefault();
     this.setState(({ friends, name }) => ({
@@ -13,13 +28,18 @@ class Greetings extends Component {
   };
   remove = id =>
     this.setState(({ friends }) => ({
-      friends: friends.filter(friend => friend.id !== id)
+      friends: friends.map(friend => (friend.id === id ? { ...friend, isRemoved: !friend.isRemoved } : friend))
     }));
   onChange = event => this.setState({ name: event.target.value });
   render() {
     const { friends, name } = this.state;
     return (
       <div>
+        {Object.keys(filters).map(filter => (
+          <span style={{ fontWeight: filter === this.state.filter ? 'bold' : 'normal' }} onClick={() => this.setState({ filter })}>
+            {filter}{' '}
+          </span>
+        ))}
         <form onSubmit={this.add}>
           <label>
             Name:
@@ -28,9 +48,9 @@ class Greetings extends Component {
           <input type="submit" value="Add" />
         </form>
         {friends.length
-          ? friends.map(({ name, id }) => {
+          ? friends.filter(filters[this.state.filter]).map(({ name, id, isRemoved }) => {
               return (
-                <div key={id} onClick={() => this.remove(id)}>
+                <div key={id} style={{ textDecoration: isRemoved ? 'line-through' : '' }} onClick={() => this.remove(id)}>
                   {name}
                 </div>
               );
