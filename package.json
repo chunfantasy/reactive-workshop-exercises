@@ -27,7 +27,7 @@
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-redux": "6.0.1",
+    "react-redux": "7.0.2",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
     "recompose": "0.30.0",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "0.19.1",
-    "prettier": "1.16.4",
+    "prettier": "1.17.0",
     "react-scripts": "2.1.8"
   },
   "eslintConfig": {
