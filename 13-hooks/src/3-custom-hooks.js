@@ -8,7 +8,7 @@ const useOnline = () => {
     const listener = () => setIsOnline(window.navigator.onLine);
     events.forEach(t => window.addEventListener(t, listener));
     return () => events.forEach(t => window.removeEventListener(t, listener));
-  });
+  }, []);
   return isOnline;
 };
 
