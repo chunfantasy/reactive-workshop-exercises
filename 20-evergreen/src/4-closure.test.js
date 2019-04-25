@@ -9,7 +9,7 @@ describe('closure', function() {
     f();
   });
   test('should understand closure 2', function() {
-    const name = 'Hattori';
+    let name = 'Hattori';
     const before = function() {
       expect(name).toBe(__);
     };
