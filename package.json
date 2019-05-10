@@ -34,7 +34,7 @@
     "redux": "4.0.1",
     "redux-observable": "1.1.0",
     "redux-thunk": "2.3.0",
-    "rxjs": "6.5.1",
+    "rxjs": "6.5.2",
     "symbol-observable": "1.2.0"
   },
   "devDependencies": {
