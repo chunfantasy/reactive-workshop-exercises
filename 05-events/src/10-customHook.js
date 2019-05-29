@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 
 const useCounter = () => {
   const [count, setValue] = useState(0);
@@ -11,4 +10,4 @@ const Counter = () => {
   return <button onClick={increment}>{count}</button>;
 };
 
-render(<Counter />, document.getElementById('root-10'));
+export default Counter;
