@@ -11,6 +11,8 @@ import CounterExperimental from './5-fixed-es2017.js';
 import CounterWithArrow from './6-fixed-arrow.js';
 import AddressBook from './7-dont-mutate-current-state';
 import Counters from './8-dont-copy-props-to-state';
+import './9-useState';
+import './10-customHook';
 
 import './ex-2';
 
