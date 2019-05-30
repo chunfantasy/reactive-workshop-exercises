@@ -7,9 +7,7 @@ const Counter = ({ value, onIncrement }) => (
 class CounterContainer extends Component {
   state = { value: 0 };
   increment = () => this.setState(({ value }) => ({ value: value + 1 }));
-  render() {
-    return <Counter value={this.state.value} onIncrement={this.increment} />;
-  }
+  render = () => <Counter value={this.state.value} onIncrement={this.increment} />;
 }
 
 export default CounterContainer;
