@@ -26,49 +26,49 @@ test('you understand pick 3', function() {
 
 test('you understand compose2', function() {
   const pick = propertyName => object => object[propertyName];
-  const compose2 = (f1, f2) => (...args) => f2(f1(...args));
+  const compose2 = (f1, f2) => (...args) => f1(f2(...args));
   const samurai = [
     { name: 'Myamoto', address: { street: 'Samurai Way', postcode: 'SW 1' } },
     { name: 'Hattori', address: { street: 'Ninja Way', postcode: 'NW 2' } }
   ];
 
-  const whatDoesThisDo = compose2(pick('address'), pick('street'));
+  const whatDoesThisDo = compose2(pick('street'), pick('address'));
   expect(samurai.map(whatDoesThisDo)).toEqual(__);
 });
 
 test('you understand compose', function() {
   const pick = propertyName => object => object[propertyName];
   const compose = (...fns) => (...args) =>
-    fns.reduce((result, fn) => fn(result), ...args);
+    fns.reduceRight((result, fn) => fn(result), ...args);
   const samurai = [
     { name: 'Myamoto', address: { street: 'Samurai Way', postcode: 'SW 1' } },
     { name: 'Hattori', address: { street: 'Ninja Way', postcode: 'NW 2' } }
   ];
 
   const whatDoesThisDo = compose(
-    pick('address'),
+    s => `Go to ${s}`,
     pick('street'),
-    s => `Go to ${s}`
+    pick('address')
   );
   expect(samurai.map(whatDoesThisDo)).toEqual(__);
 });
 
 test('you understand compose 2', function() {
   const compose = (...fns) => (...args) =>
-    fns.reduce((result, fn) => fn(result), ...args);
+    fns.reduceRight((result, fn) => fn(result), ...args);
   const increment = x => x + 1;
   const double = x => 2 * x;
 
   expect(
     compose(
-      increment,
-      double
+      double,
+      increment
     )(123)
   ).toBe(__);
   expect(
     compose(
-      double,
-      increment
+      increment,
+      double
     )(123)
   ).toBe(__);
 });
