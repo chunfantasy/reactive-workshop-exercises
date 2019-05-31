@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-
 class Counter1 extends Component {
   state = { value: 0 };
   increment = () => this.setState(({ value }) => ({ value: value + 1 }));
   render = () => (
-    <button onClick={this.increment}>
-      {this.props.offset + this.state.value}
-    </button>
+    <button onClick={this.increment}>{this.props.offset + this.state.value}</button>
   );
 }
-
 class Counter2 extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +16,9 @@ class Counter2 extends Component {
   }
   increment = () => this.setState(({ value }) => ({ value: value + 1 }));
   render = () => (
-    <button onClick={this.increment}>
-      {this.state.offset + this.state.value}
-    </button>
+    <button onClick={this.increment}>{this.state.offset + this.state.value}</button>
   );
 }
-
 class Counters extends Component {
   state = { value: 0 };
   increment = () => this.setState(({ value }) => ({ value: value + 1 }));
@@ -37,5 +30,4 @@ class Counters extends Component {
     </div>
   );
 }
-
 export default Counters;
