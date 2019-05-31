@@ -1,4 +1,4 @@
-## Message of the day
+## Exercise
 
 Implement a React component that randomly picks and renders one of these messages of the day.
 

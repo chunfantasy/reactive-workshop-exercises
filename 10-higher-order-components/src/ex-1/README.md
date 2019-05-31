@@ -1,4 +1,4 @@
-## EXERCISE
+## Exercise
 
 Implement the autoRefresh() HOC so that it re-renders its content every _period_ milliseconds.
 

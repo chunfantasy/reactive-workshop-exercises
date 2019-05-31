@@ -1,6 +1,6 @@
-## Game of life
+## Exercise
 
-Implement a React component that renders an 2x2 game of life. Cells should alternate between dead and alive. The markup below shows a potential structure (without styling) - other approaches (e.g. using table) are ok too.
+Implement a React component that renders an 2x2 [game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Cells should alternate between dead and alive. The markup below shows a potential structure (without styling) - other approaches (e.g. using table) are ok too.
 
 ```html
 <div>

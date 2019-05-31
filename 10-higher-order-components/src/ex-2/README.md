@@ -1,4 +1,4 @@
-## EXERCISE
+## Exercise
 
 Implement the toggleable HOC that allows toggling a single flag.
 

@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-class AutoRefresh extends Component {
-  componentDidMount() {
-    this.interval = setInterval(() => this.forceUpdate(), this.props.interval);
-  }
-  componentWillUnmount = () => clearInterval(this.interval);
-  render = () => this.props.render({ now: new Date() });
+class Counter extends Component {
+  state = { count: 0 };
+  increment = () => this.setState(({ count }) => ({ count: count + 1 }));
+  render = () => this.props.render({ ...this.state, onIncrement: this.increment });
 }
 
 const App = () => (
-  <div>
-    <AutoRefresh
-      interval={1000}
-      render={({ now }) => (
-        <div>The current time is: {now.toLocaleTimeString()}</div>
-      )}
-    />
-  </div>
+  <Counter
+    render={({ count, onIncrement }) => (
+      <button onClick={onIncrement}>{count}</button>
+    )}
+  />
 );
 
 render(<App />, document.getElementById('root-1'));

@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-class Fetch extends Component {
-  state = {};
-  async componentDidMount() {
-    const response = await fetch(this.props.url);
-    const data = await response.text();
-    this.setState({ data });
-  }
-  render = () => this.props.render(this.state);
+class AutoRefresh extends Component {
+  componentDidMount = () =>
+    (this.interval = setInterval(() => this.forceUpdate(), this.props.interval));
+  componentWillUnmount = () => clearInterval(this.interval);
+  render = () => this.props.render({ now: new Date() });
 }
 
 const App = () => (
-  <div>
-    <Fetch
-      url="/api/ipify"
-      render={({ data }) => <div>Your IP address is: {data}</div>}
-    />
-  </div>
+  <AutoRefresh
+    interval={1000}
+    render={({ now }) => <div>The current time is: {now.toLocaleTimeString()}</div>}
+  />
 );
 
 render(<App />, document.getElementById('root-ex-1'));

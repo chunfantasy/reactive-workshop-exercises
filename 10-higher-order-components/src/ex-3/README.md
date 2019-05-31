@@ -1,4 +1,4 @@
-## EXERCISE
+## Exercise
 
 Implement the restful() HOC so that it encapsulates making HTTP GET requests (using fetch api).
 

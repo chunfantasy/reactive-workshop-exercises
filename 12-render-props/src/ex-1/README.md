@@ -1,14 +1,12 @@
-## EXERCISE
+## Exercise
 
-Implement a Fetch component that encapsulates making an HTTP GET request (using fetch api, for example) and using render prop to render the response.
+Implement the AutoRefresh component that automatically re-renders itself every `interval` (passed as a prop) millisecnds and uses render prop to render content.
 
 ```javascript
 const App = () => (
-  <div>
-    <Fetch
-      url="/api/ipify"
-      render={({ data }) => <div>Your IP address is: {data}</div>}
-    />
-  </div>
+  <AutoRefresh
+    interval={1000}
+    render={({ now }) => <div>The current time is: {now.toLocaleTimeString()}</div>}
+  />
 );
 ```
