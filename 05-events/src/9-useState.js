@@ -1,19 +1,18 @@
 import React, { Component, useState } from 'react';
-import { render } from 'react-dom';
 
-class Counter1 extends Component {
+class OldCounter extends Component {
   state = { count: 0 };
-  increment = () => {
+  increment() {
     this.setState(({ count }) => ({ count: count + 1 }));
-  };
+  }
   render() {
-    return <button onClick={this.increment}>{this.state.count}</button>;
+    return <button onClick={() => this.increment()}>{this.state.count}</button>;
   }
 }
 
-const Counter2 = () => {
+const Counter = () => {
   const [count, setValue] = useState(0);
   return <button onClick={() => setValue(count + 1)}>{count}</button>;
 };
 
-render([<Counter1 />, <Counter2 />], document.getElementById('root-9'));
+export default Counter;

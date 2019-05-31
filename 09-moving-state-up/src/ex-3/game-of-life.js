@@ -38,27 +38,25 @@ const cellKey = (row, col) => `${row}_${col}`;
 class GameOfLifeContainer extends Component {
   state = { isAlive: {} };
   isCellAlive = (row, col) => this.state.isAlive[cellKey(row, col)];
-  toggleCellState = (row, col) =>
+  toggleCellState = (row, col) => {
     this.setState(({ isAlive }) => {
       const key = cellKey(row, col);
       const { [key]: isCellAlive, ...result } = isAlive;
-      return {
-        isAlive: isCellAlive ? result : { [key]: true, ...result }
-      };
+      return { isAlive: isCellAlive ? result : { [key]: [row, col], ...result } };
     });
-  tick = () =>
+  };
+  // prettier-ignore
+  tick = () => {
     this.setState(({ isAlive }) => {
-      const neighbours = Object.keys(isAlive)
-        .map(k => k.split('_').map(p => parseInt(p, 10)))
-        .map(([row, col]) => deltas.map(([r, c, n]) => [row + r, col + c, n]))
-        .flat()
-        .map(([row, column, dn]) => [`${row}_${column}`, dn])
-        .reduce((acc, [k, dn]) => ({ ...acc, [k]: (acc[k] || 0) + dn }), {});
-      const nextState = Object.keys(neighbours)
-        .filter(k => (isAlive[k] && neighbours[k] === 2) || neighbours[k] === 3)
-        .reduce((result, key) => ({ ...result, [key]: true }), {});
+      const neighbours = Object.values(isAlive)
+        .flatMap(([row, col]) => deltas.map(([r, c, n]) => [cellKey(row + r, col + c), row + r, col + c, n]))
+        .reduce((acc, [k, r, c, dn]) => ({ ...acc, [k]: [((acc[k] && acc[k][0]) || 0) + dn, r, c] }), {});
+      const nextState = Object.entries(neighbours)
+        .filter(([k, [n]]) => (isAlive[k] && n === 2) || n === 3)
+        .reduce((isAlive, [k, [_, r, c]]) => ({ ...isAlive, [k]: [r, c] }), {});
       return { isAlive: nextState };
     });
+  }
   render = () => (
     <Game
       {...this.props}

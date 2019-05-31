@@ -24,6 +24,7 @@
   "dependencies": {
     "bootstrap": "4.3.1",
     "classnames": "2.2.6",
+    "core-js": "3.1.3",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -51,7 +52,8 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "printWidth": 85
   },
   "browserslist": [
     ">0.2%",
