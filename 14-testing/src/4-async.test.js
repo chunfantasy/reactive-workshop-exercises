@@ -5,7 +5,7 @@ import MyIp from './4-async';
 beforeEach(fetch.resetMocks);
 afterEach(cleanup);
 
-it('shoud fetch your outbound IP address', async () => {
+it('shoud fetch and display your outbound IP address', async () => {
   fetch.mockResponseOnce(JSON.stringify({ ip: '1.2.3.4' }));
   const { container, getByText } = render(<MyIp />);
   expect(container.querySelector('div').textContent).toBe('');
