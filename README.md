@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - git client
-- NodeJS 12.3.1+ & NPM 6.9.0+
+- NodeJS 12.4.0+ & NPM 6.9.0+
 - Recommended Visual Studio Code extensions:
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -27,10 +27,10 @@ In case your OS doesn't support symlinks:
 
 ```bash
 git clone https://bitbucket.org/8pointers/reactive-workshop-exercises.git
-cd reactive-workshop-exercises/01-intro
-rm package.json node_modules src/setupProxy.js
-cp ../package.json .
-cp ../setupProxy.js src
+cd reactive-workshop-exercises\01-intro
+del package.json node_modules src\setupProxy.js
+copy ..\package.json .
+copy ..\setupProxy.js src
 npm install
 npm start
 ```

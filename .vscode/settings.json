@@ -1,7 +1,10 @@
 {
   "editor.formatOnSave": true,
   "files.exclude": {
-    "**/node_modules": true
+    "package-lock.json": true,
+    "**/node_modules": true,
+    "*/package.json": true,
+    "*/src/setupProxy.js": true
   },
   "jest.enableCodeLens": false,
   "jest.enableInlineErrorMessages": false,
