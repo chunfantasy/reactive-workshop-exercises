@@ -9,5 +9,5 @@
   "jest.enableCodeLens": false,
   "jest.enableInlineErrorMessages": false,
   "jest.pathToJest": "npm run-script test --",
-  "jest.rootPath": "20-evergreen/src"
+  "jest.rootPath": "14-testing/src"
 }
