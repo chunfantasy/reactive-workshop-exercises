@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
-const restful = MyComponent =>
+const restful = MyComponent => ({ url, ...props }) => {
+  const [data, setState] = useState();
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.text())
+      .then(setState);
+  }, [url]);
+  return <MyComponent {...props} data={data} />;
+};
+
+const restful1 = MyComponent =>
   class extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-      fetch(props.url)
+    state = {};
+
+    componentDidMount = () =>
+      fetch(this.props.url)
         .then(response => response.text())
         .then(data => this.setState({ data }));
-    }
 
-    render() {
-      const props = {
-        data: this.state.data,
-        ...this.props
-      };
-      return <MyComponent {...props} />;
-    }
+    render = () => <MyComponent {...this.props} {...this.state} />;
   };
 
 const MyIp = restful(({ label, data }) => (

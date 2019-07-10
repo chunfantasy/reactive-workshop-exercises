@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 class AutoRefresh extends Component {
-  componentDidMount = () =>
+  setupInterval = () =>
     (this.interval = setInterval(() => this.forceUpdate(), this.props.interval));
+  componentDidMount = () => this.setupInterval();
   componentWillUnmount = () => clearInterval(this.interval);
+  componentDidUpdate = prevProps => {
+    if (this.props.interval !== prevProps.interval) {
+      clearInterval(this.interval);
+      this.setupInterval();
+    }
+  };
   render = () => this.props.render({ now: new Date() });
 }
 
