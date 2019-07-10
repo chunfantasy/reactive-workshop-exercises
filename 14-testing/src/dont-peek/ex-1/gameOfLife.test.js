@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import GameOfLife from './game-of-life';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 let container;
 beforeEach(() => {

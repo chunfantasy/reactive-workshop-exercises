@@ -32,16 +32,16 @@
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
     "recompose": "0.30.0",
-    "redux": "4.0.1",
+    "redux": "4.0.4",
     "redux-observable": "1.1.0",
     "redux-thunk": "2.3.0",
     "rxjs": "6.5.2",
     "symbol-observable": "1.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "4.0.0",
     "@testing-library/react": "8.0.4",
     "http-proxy-middleware": "0.19.1",
-    "jest-dom": "3.5.0",
     "jest-fetch-mock": "2.1.2",
     "prettier": "1.18.2",
     "react-scripts": "3.0.1"
