@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - git client
-- NodeJS 12.6.0+ & NPM 6.9.0+
+- NodeJS 12.8.1+ & NPM 6.10.3+
 - Recommended Visual Studio Code extensions:
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
