@@ -23,7 +23,7 @@ cd 01-intro
 npm start
 ```
 
-In case your OS doesn't support symlinks:
+In case your OS doesn't support symlinks (Windows):
 
 ```bash
 git clone https://bitbucket.org/8pointers/reactive-workshop-exercises.git
