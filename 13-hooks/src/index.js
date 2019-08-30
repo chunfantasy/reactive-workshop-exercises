@@ -3,6 +3,7 @@ import './1-0-useState.js';
 import './1-1-useState.js';
 import './1-2-useReducer.js';
 import './1-3-useReducer.js';
+import './1-4-problem-closure.js';
 import './2-0-useEffect.js';
 import './2-1-useEffect.js';
 import './3-custom-hooks.js';
