@@ -9,6 +9,7 @@ import ClockWithLifecycle from './4-lifecycle-methods.js';
 import ClockBatching from './5-batching.js';
 import ClockBatchingSolution from './6-batching-solution.js';
 import IllustrateMergingStateUpdates from './7-merging-updates.js';
+import './8-useState-useEffect';
 
 import './ex-1';
 
