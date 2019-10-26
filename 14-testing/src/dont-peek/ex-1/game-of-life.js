@@ -30,8 +30,9 @@ const GameOfLife = ({ n, width, height }) => {
       <div>
         {Array.from({ length: n * n })
           .map((_, i) => ({ row: Math.floor(i / n), column: i % n }))
-          .map(({ row, column }) => (
+          .map(({ row, column }, i) => (
             <div
+              key={i}
               className={classnames({
                 cell: true,
                 alive: isCellAlive(row, column)
